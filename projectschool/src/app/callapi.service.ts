@@ -65,6 +65,7 @@ export class CallapiService {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public getAllData_Course() {
   return this.http.get<course>(CallapiService.host + 'Course/GetAll_DataCourse');
 }
@@ -84,6 +85,27 @@ public eidit_Course(id: string, data) {
 public delete_Course(id: string) {
   return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
 }
+=======
+  public getAllData_Course() {
+    return this.http.get<coures>(CallapiService.host + 'Course/GetAll_DataCourse');
+  }
+
+  public getById_Course(id: string) {
+    return this.http.get<coures>(CallapiService.host + 'Course/GetById_Course/' + id);
+  }
+
+  public add_Course(data) {
+    return this.http.post<coures>(CallapiService.host + 'Course/Add_Course', data);
+  }
+
+  public edit_Course(id: string, data) {
+    return this.http.put<coures>(CallapiService.host + 'Course/Edit_Course/' + id, data);
+  }
+
+  public delete_Course(id: string) {
+    return this.http.delete<coures>(CallapiService.host + 'Course/Delete_Course/' + id);
+  }
+>>>>>>> 0806e2df41bbd066ab2f8b6d607e4f9560904bb6
 =======
   public getAllData_Course() {
     return this.http.get<coures>(CallapiService.host + 'Course/GetAll_DataCourse');
