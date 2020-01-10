@@ -14,13 +14,13 @@ export class UpdateteacherPage implements OnInit {
 
   id_dataTeacher: any;
   updateTeacher: userTeacher;
-  allDataTeacher : FormGroup;
+  all_DataTeacher : FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
 
     this.id_dataTeacher = this.activate.snapshot.paramMap.get('_id');
 
-    this.allDataTeacher = this.formbuilder.group({
+    this.all_DataTeacher = this.formbuilder.group({
       'userName_Teacher': [null, Validators.required],
       'passWord_Teacher': [null, Validators.required],
       'id_Teacher': [null, Validators.required],
@@ -35,4 +35,3 @@ export class UpdateteacherPage implements OnInit {
   }
 
 }
-c
