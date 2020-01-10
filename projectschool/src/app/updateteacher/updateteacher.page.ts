@@ -32,6 +32,7 @@ export class UpdateteacherPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getById_Teacher();
 
   }
 
@@ -40,14 +41,21 @@ export class UpdateteacherPage implements OnInit {
       this.all_DataTeacher.patchValue(id)
       this.update_Teacher = id;
       console.log(this.all_DataTeacher.value);
-    
+
 
     });
   }
 
-  editData_Teacher(){
-    this.id_dataTeacher.value;
+  editData_Teacher() {
+    this.update_Teacher = this.all_DataTeacher.value;
+    console.log(this.update_Teacher);
+    
+    this.id_dataTeacher.edit_Teaccher(this.id_dataTeacher, this.all_DataTeacher).subscribe(id => {
 
+      console.log(id);
+
+    });
+
+    this.router.navigate(['/home']);
   }
-
 }

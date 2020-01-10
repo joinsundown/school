@@ -33,6 +33,28 @@ export class UpdatestudentPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getById_Student();
+  }
+
+  getById_Student() {
+    this.callapi.getById_Student(this.id_dataStudent).subscribe(id => {
+      this.all_DataStudent.patchValue(id)
+      this.update_Student = id;
+      console.log(this.all_DataStudent.value);
+    });
+  }
+
+  editData_Student() {
+    this.update_Student = this.all_DataStudent.value;
+    console.log(this.update_Student);
+    
+    this.id_dataStudent.edit_Student(this.id_dataStudent, this.all_DataStudent).subscribe(id => {
+
+      console.log(id);
+
+    });
+
+    this.router.navigate(['/home']);
   }
 
 }
