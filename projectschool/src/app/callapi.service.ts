@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { userTeacher } from '../models/userTeacher';
 import { userStudent } from '../models/userStudent';
-import { coures } from '../models/coures';
+import { course } from '../models/course';
 import { from } from 'rxjs';
 
 @Injectable({
@@ -28,8 +28,8 @@ export class CallapiService {
     return this.http.post<userTeacher>(CallapiService.host + 'Teacher/AddUser_Teacher', data);
   }
 
-  public edit_Teaccher(id: string, data) {
-    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Edit_Teacher/' + id, data);
+  public eidit_Teaccher(id: string, data) {
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Eidit_Teacher/' + id, data);
   }
 
   public delete_Teaccher(id: string) {
@@ -64,6 +64,28 @@ export class CallapiService {
   // ------------------------------------------Course-----------------------------------------------------
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+public getAllData_Course() {
+  return this.http.get<course>(CallapiService.host + 'Course/GetAll_DataCourse');
+}
+
+public getById_Course(id: string) {
+  return this.http.get<course>(CallapiService.host + 'Course/GetById_Course/' + id);
+}
+
+public add_Course(data) {
+  return this.http.post<course>(CallapiService.host + 'Course/Add_Course', data);
+}
+
+public eidit_Course(id: string, data) {
+  return this.http.put<course>(CallapiService.host + 'Course/Eidit_Course/' + id, data);
+}
+
+public delete_Course(id: string) {
+  return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
+}
+=======
   public getAllData_Course() {
     return this.http.get<coures>(CallapiService.host + 'Course/GetAll_DataCourse');
   }
@@ -83,5 +105,27 @@ export class CallapiService {
   public delete_Course(id: string) {
     return this.http.delete<coures>(CallapiService.host + 'Course/Delete_Course/' + id);
   }
+>>>>>>> 0806e2df41bbd066ab2f8b6d607e4f9560904bb6
+=======
+  public getAllData_Course() {
+    return this.http.get<coures>(CallapiService.host + 'Course/GetAll_DataCourse');
+  }
+
+  public getById_Course(id: string) {
+    return this.http.get<coures>(CallapiService.host + 'Course/GetById_Course/' + id);
+  }
+
+  public add_Course(data) {
+    return this.http.post<coures>(CallapiService.host + 'Course/Add_Course', data);
+  }
+
+  public edit_Course(id: string, data) {
+    return this.http.put<coures>(CallapiService.host + 'Course/Edit_Course/' + id, data);
+  }
+
+  public delete_Course(id: string) {
+    return this.http.delete<coures>(CallapiService.host + 'Course/Delete_Course/' + id);
+  }
+>>>>>>> 0806e2df41bbd066ab2f8b6d607e4f9560904bb6
 
 }

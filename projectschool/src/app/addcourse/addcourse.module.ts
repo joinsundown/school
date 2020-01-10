@@ -4,18 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddcouresPageRoutingModule } from './addcoures-routing.module';
+import { AddcoursePageRoutingModule } from './addcourse-routing.module';
 
-import { AddcouresPage } from './addcoures.page';
+import { AddcoursePage } from './addcourse.page';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule,
     IonicModule,
-    AddcouresPageRoutingModule
+    AddcoursePageRoutingModule
   ],
-  declarations: [AddcouresPage]
+  declarations: [AddcoursePage]
 })
-export class AddcouresPageModule {}
+export class AddcoursePageModule {}

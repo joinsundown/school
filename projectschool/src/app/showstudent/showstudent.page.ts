@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CallapiService } from '../callapi.service';
+import { userStudent } from 'src/models/userStudent';
+
 
 @Component({
   selector: 'app-showstudent',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowstudentPage implements OnInit {
 
-  constructor() { }
+  getdataAllstudent: userStudent;
+
+  constructor(public callapi: CallapiService, public router: Router) {}
 
   ngOnInit() {
+    this.getAllData();
+  }
+  ionViewDidEnter() {
+    this.getAllData();
   }
 
+  getAllData() {
+    this.callapi.getAllData_Student().subscribe(data => {
+      this.getdataAllstudent = data;
+      console.log(this.getdataAllstudent);
+
+    });
+  }
+  delete_Student(id) {
+    this.callapi.delete_Student(id).subscribe(data => {
+      this.getAllData();
+    });
+  }
 }
