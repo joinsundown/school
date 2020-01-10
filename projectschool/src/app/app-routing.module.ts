@@ -17,13 +17,13 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'teacher',
-    loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
+    path: 'showteacher',
+    loadChildren: () => import('./showteacher/showteacher.module').then( m => m.ShowteacherPageModule)
   },
   {
     path: 'showstudent',
     loadChildren: () => import('./showstudent/showstudent.module').then( m => m.ShowstudentPageModule)
-  },
+  }
 
 ];
 
