@@ -14,7 +14,7 @@ namespace allApi.Controllers
     [Route("api/[controller]/[action]")]
 
 
-    public class CouresController : ControllerBase
+    public class CourseController : ControllerBase
     {
 
         public static List<Course> Data_Course = new List<Course>
@@ -58,7 +58,7 @@ namespace allApi.Controllers
 
 
         [HttpPut  ("{id}")]
-        public Course Eidit_Course(string id, [FromBody] Course CourseAll)
+        public Course Edit_Course(string id, [FromBody] Course CourseAll)
         {
 
             var _id = Data_Course.FirstOrDefault(it => it.Id_Course == id.ToString());

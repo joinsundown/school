@@ -13,25 +13,45 @@ export class UpdateteacherPage implements OnInit {
 
 
   id_dataTeacher: any;
-  updateTeacher: userTeacher;
-  allDataTeacher : FormGroup;
+  update_Teacher: userTeacher;
+  all_DataTeacher: FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
 
     this.id_dataTeacher = this.activate.snapshot.paramMap.get('_id');
 
-    this.allDataTeacher = this.formbuilder.group({
+    this.all_DataTeacher = this.formbuilder.group({
       'userName_Teacher': [null, Validators.required],
       'passWord_Teacher': [null, Validators.required],
       'id_Teacher': [null, Validators.required],
-      'firsName_Teacher':[null, Validators.required],
-      'laseName_Teacher':[null, Validators.required],
-      'email_Teacher':[null, Validators.required]
+      'firsName_Teacher': [null, Validators.required],
+      'laseName_Teacher': [null, Validators.required],
+      'email_Teacher': [null, Validators.required]
 
     });
   }
 
   ngOnInit() {
+
   }
 
+  getById_Teacher() {
+    this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(id => {
+      this.all_DataTeacher.patchValue(id)
+      this.update_Teacher = id;
+      console.log(this.all_DataTeacher.value);
+    
+
+    });
+  }
+
+  editData_Teacher(){
+    this.id_dataTeacher.value;
+
+  }
+
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5d98aab144907e0d070c3df5496b3c35da9e15f0

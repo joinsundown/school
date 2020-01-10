@@ -12,14 +12,14 @@ import { userStudent } from 'src/models/userStudent';
 export class UpdatestudentPage implements OnInit {
 
   id_dataStudent: any;
-  updateStudent: userStudent;
-  allDateStudent: FormGroup;
+  update_Student: userStudent;
+  all_DataStudent: FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
 
     this.id_dataStudent = this.activate.snapshot.paramMap.get('_id');
 
-    this.allDateStudent = this.formbuilder.group({
+    this.all_DataStudent = this.formbuilder.group({
       'userName_Student': [null, Validators.required],
       'passWord_Student': [null, Validators.required],
       'id_Student': [null, Validators.required],
