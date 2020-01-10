@@ -26,7 +26,7 @@ namespace allApi.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<UserStudent>> GetAll_DataStudent()
+        public ActionResult<IEnumerable<UserStudent>> GetAllData_Student()
         {
             return Data_Student.ToList();
 

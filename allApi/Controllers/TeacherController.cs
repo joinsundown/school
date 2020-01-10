@@ -28,7 +28,7 @@ namespace allApi.Controllers
     };
 
         [HttpGet]
-        public ActionResult<IEnumerable<UserTeacher>> GetAll_DataTeacher()
+        public ActionResult<IEnumerable<UserTeacher>> GetAllData_Teacher()
         {
             return Data_Teacher.ToList();
 
