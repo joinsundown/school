@@ -29,39 +29,39 @@ export class CallapiService {
   }
 
   public eidit_Teaccher(id: string, data) {
-    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Teacher/Eidit_Teacher/' + id, data);
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Eidit_Teacher/' + id, data);
   }
 
   public delete_Teaccher(id: string) {
-    return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Teacher/Delete_Teacher/' + id);
+    return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Delete_Teacher/' + id);
   }
 
 
 
-// -----------------------------------------Student-----------------------------------------------------------------
+  // -----------------------------------------Student-----------------------------------------------------------------
 
 
-public getAllData_Student() {
-  return this.http.get<userStudent>(CallapiService.host + 'Student/GetAllData_Student');
-}
+  public getAllData_Student() {
+    return this.http.get<userStudent>(CallapiService.host + 'Student/GetAllData_Student');
+  }
 
-public getById_Student(id: string) {
-  return this.http.get<userStudent>(CallapiService.host + 'Student/GetById_Student/' + id);
-}
+  public getById_Student(id: string) {
+    return this.http.get<userStudent>(CallapiService.host + 'Student/GetById_Student/' + id);
+  }
 
-public add_Student(data) {
-  return this.http.post<userStudent>(CallapiService.host + 'Student/AddUser_Student', data);
-}
+  public add_Student(data) {
+    return this.http.post<userStudent>(CallapiService.host + 'Student/AddUser_Student', data);
+  }
 
-public eidit_Student(id: string, data) {
-  return this.http.put<userStudent>(CallapiService.host + 'Student/Eidit_Student/' + id, data);
-}
+  public edit_Student(id: string, data) {
+    return this.http.put<userStudent>(CallapiService.host + 'Student/Edit_Student/' + id, data);
+  }
 
-public delete_Student(id: string) {
-  return this.http.delete<userStudent>(CallapiService.host + 'Student/Delete_Student/' + id);
-}
+  public delete_Student(id: string) {
+    return this.http.delete<userStudent>(CallapiService.host + 'Student/Delete_Student/' + id);
+  }
 
-// ------------------------------------------Coures-----------------------------------------------------
+  // ------------------------------------------Course-----------------------------------------------------
 
 
 public getAllData_Course() {

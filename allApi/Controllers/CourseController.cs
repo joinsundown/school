@@ -58,7 +58,7 @@ namespace allApi.Controllers
 
 
         [HttpPut  ("{id}")]
-        public Course Eidit_Course(string id, [FromBody] Course CourseAll)
+        public Course Edit_Course(string id, [FromBody] Course CourseAll)
         {
 
             var _id = Data_Course.FirstOrDefault(it => it.Id_Course == id.ToString());
