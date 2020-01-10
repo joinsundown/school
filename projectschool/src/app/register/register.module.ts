@@ -21,9 +21,13 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     IonicModule,
+    FormsModule,
+    RegisterPageRoutingModule,
     RouterModule.forChild(routes)
   ],
   declarations: [RegisterPage],
 })
-export class RegisterPageModule {}
+export class RegisterPageModule { }
+
+
 

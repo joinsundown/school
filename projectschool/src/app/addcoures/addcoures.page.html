@@ -7,14 +7,14 @@
     </ion-row>
   </ion-card>
 
-<form >
+<form [formGroup]="couresData" (ngSubmit)="AddCoures()" >
 
 <ion-row>
   <ion-col size ="6" class="center-block" >
     <ion-list>
       <ion-item color="light">
         <ion-label stacked></ion-label>
-        <ion-input type="text"  placeholder="COURSE ID"  round></ion-input>
+        <ion-input type="text" formControlName = 'id_Coures'  placeholder="COURSE ID"  round></ion-input>
       </ion-item>
     </ion-list>
   </ion-col>
@@ -25,32 +25,16 @@
     <ion-list>
       <ion-item color="light">
         <ion-label stacked></ion-label>
-        <ion-input type="text"  placeholder="COURSE NAME"  round></ion-input>
+        <ion-input type="text" formControlName = 'name_Coures'  placeholder="COURSE NAME"  round></ion-input>
       </ion-item>
     </ion-list>
   </ion-col>
 </ion-row>
-
-
-<ion-row>
-  <ion-col size ="6" class="center-block" >
-    <ion-list>
-      <ion-item color="light">
-        <ion-label stacked></ion-label>
-        <ion-input type="text"  placeholder="COURSE CONTENT"  round></ion-input>
-      </ion-item>
-    </ion-list>
-  </ion-col>
-</ion-row>
-
-
-    
-
 
   <ion-row>
     <ion-col width = 50 style="text-align: center;" >
-      <ion-button shape="round" color = "warning"  type="submit" routerLink="/showcarshop">LOGIN</ion-button> &nbsp; &nbsp; &nbsp; &nbsp;
-      <ion-button shape="round" color = "warning" routerLink="/home" >CANCLE</ion-button>
+      <ion-button shape="round" color = "warning"  type = "submit" >ADDCOURES</ion-button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <ion-button shape="round" color = "warning"  >CANCLE</ion-button>
     </ion-col>
   </ion-row>
 </form>

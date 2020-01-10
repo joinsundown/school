@@ -15,60 +15,68 @@
     </ion-select>
   </ion-item>
 
+  <form [formGroup]="studentData" (ngSubmit)="add_Student()">
+    <div *ngIf="statusop == 'student'" text-center>
 
-  <div *ngIf="statusop == 'student'" text-center>
-
-    <ion-card>
-      <ion-label padding position="floating">ID STUDENT</ion-label>
-      <ion-input type="text" disabled placeholder="Not-Edit"></ion-input><br>
-
-      <ion-label position="floating">INSERT STUDENT</ion-label>
-      <ion-input type="text"></ion-input>
-
-      <!-- <ion-label position="floating">Insert score_sudent</ion-label>
-      <ion-input type="text" disabled [(ngModel)]="score_sudent" placeholder="Not-Edit"></ion-input> -->
-
-      <ion-label position="floating">INSERT STATUS</ion-label>
-      <ion-input type="text"></ion-input>
-
-      <ion-label position="floating">INSERT GENDER</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-card>
-
-    <ion-row>
-      <ion-col>
-        <ion-button color="dark" (click)="addStudent()">addstudent</ion-button>
-        <ion-button color="danger" routerLink="/register">cancle</ion-button>
-      </ion-col>
-    </ion-row><br>
-
-  </div>
-  <div *ngIf="statusop == 'teacher'" text-center>
-    <form class="backgroundup" [formGroup]="teacherData" (ngSubmit)="addTeacher()">
       <ion-card>
-        <ion-label position="floating">ID Teacher</ion-label>
-        <ion-input type="text" disabled placeholder="Not-Edit"></ion-input><br>
+        <ion-label>Username_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='username_Student'></ion-input><br>
 
-        <ion-label position="floating">INSERT NAME</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label>Password_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='password_Student'></ion-input>
 
-        <ion-label position="floating">INSERT STATUS</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label>Id_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='id_Student'></ion-input>
 
-        <ion-label position="floating">INSERT GENDER</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label>FirstName_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='firstName_Student'></ion-input>
 
+        <ion-label>LaseName_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='laseName_Student'></ion-input>
 
+        <ion-label>Email_Student</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='email_Student'></ion-input>
       </ion-card>
 
       <ion-row>
         <ion-col>
-          <ion-button color="dark" (click)="addTeacher()">addteacher</ion-button>
+          <ion-button color="dark" (click)="add_Student(data)">addstudent</ion-button>
           <ion-button color="danger" routerLink="/register">cancle</ion-button>
         </ion-col>
       </ion-row><br>
+    </div>
+  </form>
 
-    </form>
-  </div>
+  <form [formGroup]="teacherData" (ngSubmit)="add_Teacher()">
+    <div *ngIf="statusop == 'teacher'" text-center>
+
+      <ion-card>
+        <ion-label>Username_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='username_Teacher'></ion-input><br>
+
+        <ion-label>Password_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='password_Teacher'></ion-input>
+
+        <ion-label>Id_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='id_Teacher'></ion-input>
+
+        <ion-label>FirstName_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='firstName_Teacher'></ion-input>
+
+        <ion-label>LaseName_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='laseName_Teacher'></ion-input>
+
+        <ion-label>Email_Teacher</ion-label>
+        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='email_Teacher'></ion-input>
+      </ion-card>
+
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="add_Teacher(data)">addteacher</ion-button>
+          <ion-button color="danger" routerLink="/register">cancle</ion-button>
+        </ion-col>
+      </ion-row><br>
+    </div>
+  </form>
 
 </ion-content>
