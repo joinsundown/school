@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { userTeacher } from '../models/userTeacher';
 import { userStudent } from '../models/userStudent';
-import { coures } from '../models/coures';
+import { course } from '../models/course';
 import { from } from 'rxjs';
 
 @Injectable({
@@ -64,24 +64,24 @@ public delete_Student(id: string) {
 // ------------------------------------------Coures-----------------------------------------------------
 
 
-public getAllData_Coures() {
-  return this.http.get<coures>(CallapiService.host + 'Coures/GetAll_DataCourse');
+public getAllData_Course() {
+  return this.http.get<course>(CallapiService.host + 'Course/GetAll_DataCourse');
 }
 
-public getById_Coures(id: string) {
-  return this.http.get<coures>(CallapiService.host + 'Coures/GetById_Course/' + id);
+public getById_Course(id: string) {
+  return this.http.get<course>(CallapiService.host + 'Course/GetById_Course/' + id);
 }
 
-public add_Coures(data) {
-  return this.http.post<coures>(CallapiService.host + 'Coures/Add_Course/', data);
+public add_Course(data) {
+  return this.http.post<course>(CallapiService.host + 'Course/Add_Course', data);
 }
 
-public eidit_Coures(id: string, data) {
-  return this.http.put<coures>(CallapiService.host + 'Coures/Eidit_Course/' + id, data);
+public eidit_Course(id: string, data) {
+  return this.http.put<course>(CallapiService.host + 'Course/Eidit_Course/' + id, data);
 }
 
-public delete_Coures(id: string) {
-  return this.http.delete<coures>(CallapiService.host + 'Coures/Delete_Course/' + id);
+public delete_Course(id: string) {
+  return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
 }
 
 }
