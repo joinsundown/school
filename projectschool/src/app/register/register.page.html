@@ -9,14 +9,15 @@
 
     <ion-label padding>REGISTER</ion-label>
 
-      <ion-select [(ngModel)]="statusop">
-        <ion-select-option value="student">STUDENT</ion-select-option>
-        <ion-select-option value="teacher">TEACHER</ion-select-option>
-      </ion-select>
+    <ion-select [(ngModel)]="statusop">
+      <ion-select-option value="student">STUDENT</ion-select-option>
+      <ion-select-option value="teacher">TEACHER</ion-select-option>
+    </ion-select>
   </ion-item>
 
 
   <div *ngIf="statusop == 'student'" text-center>
+
     <ion-card>
       <ion-label padding position="floating">ID STUDENT</ion-label>
       <ion-input type="text" disabled placeholder="Not-Edit"></ion-input><br>
@@ -35,7 +36,7 @@
     </ion-card>
 
     <ion-row>
-      <ion-col >
+      <ion-col>
         <ion-button color="dark" (click)="addStudent()">addstudent</ion-button>
         <ion-button color="danger" routerLink="/register">cancle</ion-button>
       </ion-col>
@@ -43,28 +44,31 @@
 
   </div>
   <div *ngIf="statusop == 'teacher'" text-center>
-    <ion-card >
-      <ion-label position="floating">ID Teacher</ion-label>
-      <ion-input type="text" disabled placeholder="Not-Edit"></ion-input><br>
+    <form class="backgroundup" [formGroup]="teacherData" (ngSubmit)="addTeacher()">
+      <ion-card>
+        <ion-label position="floating">ID Teacher</ion-label>
+        <ion-input type="text" disabled placeholder="Not-Edit"></ion-input><br>
 
-      <ion-label position="floating">INSERT NAME</ion-label>
-      <ion-input type="text"></ion-input>
+        <ion-label position="floating">INSERT NAME</ion-label>
+        <ion-input type="text"></ion-input>
 
-      <ion-label position="floating">INSERT STATUS</ion-label>
-      <ion-input type="text"></ion-input>
+        <ion-label position="floating">INSERT STATUS</ion-label>
+        <ion-input type="text"></ion-input>
 
-      <ion-label position="floating">INSERT GENDER</ion-label>
-      <ion-input type="text"></ion-input>
+        <ion-label position="floating">INSERT GENDER</ion-label>
+        <ion-input type="text"></ion-input>
 
 
-    </ion-card>
+      </ion-card>
 
-    <ion-row>
-      <ion-col >
-        <ion-button color="dark" (click)="addTeacher()">addteacher</ion-button>
-        <ion-button color="danger" routerLink="/register">cancle</ion-button>
-      </ion-col>
-    </ion-row><br>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" (click)="addTeacher()">addteacher</ion-button>
+          <ion-button color="danger" routerLink="/register">cancle</ion-button>
+        </ion-col>
+      </ion-row><br>
 
+    </form>
   </div>
+
 </ion-content>
