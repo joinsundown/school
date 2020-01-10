@@ -12,6 +12,7 @@ import { AddcouresPage } from './addcoures.page';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     IonicModule,
     AddcouresPageRoutingModule
   ],
