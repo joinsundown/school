@@ -5,13 +5,17 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'teacher',
-    loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
+    path: 'addcoures',
+    loadChildren: () => import('./addcoures/addcoures.module').then( m => m.AddcouresPageModule)
   },
+{
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  }
 ];
 
 @NgModule({
