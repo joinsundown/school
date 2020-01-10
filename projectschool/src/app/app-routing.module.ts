@@ -9,7 +9,7 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'addcourse',
+    path: 'addcoures',
     loadChildren: () => import('./addcourse/addcourse.module').then( m => m.AddcoursePageModule)
   },
 {
@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'updatecoures',
-    loadChildren: () => import('./updatecoures/updatecoures.module').then( m => m.UpdatecouresPageModule)
+    loadChildren: () => import('./updatecourues/updatecoures.module').then( m => m.UpdatecouresPageModule)
   }
 
 ];

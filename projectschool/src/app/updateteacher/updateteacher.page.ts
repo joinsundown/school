@@ -54,12 +54,8 @@ export class UpdateteacherPage implements OnInit {
 
       console.log(id);
 
-<<<<<<< HEAD
     });
 
     this.router.navigate(['/home']);
   }
 }
-=======
-}
->>>>>>> ce69ffbb3c10a977b60bf4ec84a2067277c1eb8e
