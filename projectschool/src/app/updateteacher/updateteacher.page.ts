@@ -50,8 +50,4 @@ export class UpdateteacherPage implements OnInit {
 
   }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5d98aab144907e0d070c3df5496b3c35da9e15f0

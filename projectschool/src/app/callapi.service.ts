@@ -28,13 +28,8 @@ export class CallapiService {
     return this.http.post<userTeacher>(CallapiService.host + 'Teacher/AddUser_Teacher', data);
   }
 
-<<<<<<< HEAD
   public eidit_Teaccher(id: string, data) {
     return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Eidit_Teacher/' + id, data);
-=======
-  public edit_Teaccher(id: string, data) {
-    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Edit_Teacher/' + id, data);
->>>>>>> 5d98aab144907e0d070c3df5496b3c35da9e15f0
   }
 
   public delete_Teaccher(id: string) {
