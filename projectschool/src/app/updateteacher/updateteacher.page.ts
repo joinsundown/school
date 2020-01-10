@@ -35,4 +35,3 @@ export class UpdateteacherPage implements OnInit {
   }
 
 }
-c

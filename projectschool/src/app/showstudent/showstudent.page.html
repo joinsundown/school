@@ -7,24 +7,31 @@
 <ion-content>
   <ion-card>
     <ion-row>
-      <ion-col><label>ID_student</label></ion-col>
-      <ion-col><label>NAME_student</label></ion-col>
-      <!-- <ion-col><label>SCORE_student</label></ion-col> -->
-      <ion-col><label>TYPE_status</label></ion-col>
-      <ion-col><label>GENDER</label></ion-col>
-      <ion-col><label>EDIT</label></ion-col>
+      <ion-col><label>Username_Student</label></ion-col>
+      <ion-col><label>Password_Student</label></ion-col>
+      <ion-col><label>Id_Student</label></ion-col>
+      <ion-col><label>FirstName_Student</label></ion-col>
+      <ion-col><label>LaseName_Student</label></ion-col>
+      <ion-col><label>Email_Student</label></ion-col>
+      <ion-col><label>Edit</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
+
     </ion-row>
-    <ion-row *ngFor='let data of listSutudent'>
-      <ion-col class="a"><label>{{data.id_student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.name_student}}</label></ion-col>
-      <!-- <ion-col class="a"><label>{{data.score_student}}</label></ion-col> -->
-      <ion-col class="a"><label>{{data.type_status}}</label></ion-col>
-      <ion-col class="a"><label>{{data.gender}}</label></ion-col>
-      <ion-col colspan="2">
-        <ion-button class="b" expand="small" color="primary" (click)="getSutdentById(data.id_student)"></ion-button>
-        <ion-button class="b" expand="small" color="danger" (click)="deleteidStudent(data.id_student)"></ion-button>
+    <ion-row *ngFor='let data of getdataAllstudent'>
+      <ion-col class="a"><label>{{data.username_Student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.password_Student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.id_Student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.firstName_Student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.laseName_Student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.email_Student}}</label></ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="getSutdentById(data.id_student)"></ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" (click)="delete_Student(data.id_Student)"></ion-button>
       </ion-col>
     </ion-row>
-    
+
   </ion-card>
 </ion-content>

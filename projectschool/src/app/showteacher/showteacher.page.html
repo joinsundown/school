@@ -7,27 +7,31 @@
 <ion-content>
   <ion-card>
     <ion-row>
-      <ion-col><label>ID_teacher</label></ion-col>
-      <ion-col><label>NAME_teacher</label></ion-col>
-      <ion-col><label>TYPE_status</label></ion-col>
-      <ion-col><label>GENDER</label></ion-col>
-      <ion-col><label>EDIT</label></ion-col>
-      
+      <ion-col><label>Username_Teacher</label></ion-col>
+      <ion-col><label>Password_Teacher</label></ion-col>
+      <ion-col><label>Id_Teacher</label></ion-col>
+      <ion-col><label>FirstName_Teacher</label></ion-col>
+      <ion-col><label>LaseName_Teacher</label></ion-col>
+      <ion-col><label>Email_Teacher</label></ion-col>
+      <ion-col><label>Edit</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
+
     </ion-row>
-    <ion-row *ngFor='let data of listteacher'>
-      <ion-col class="b"><label>{{data.id_teacher}}</label></ion-col>
-      <ion-col class="b"><label>{{data.name_teacher}}</label></ion-col>
-      <ion-col class="b"><label>{{data.type_status}}</label></ion-col>
-      <ion-col class="b"><label>{{data.gender}}</label></ion-col>
-      <ion-col colspan="2">
-        <ion-button class="b" expand="small" color="primary" (click)="getTeacherById(data.id_teacher)"></ion-button>
-        <ion-button class="b" expand="small" color="danger" (click)="deleteTeacher(data.id_teacher)"></ion-button>
+    <ion-row *ngFor='let data of getdataAllteacher'>
+      <ion-col class="a"><label>{{data.username_Teacher}}</label></ion-col>
+      <ion-col class="a"><label>{{data.password_Teacher}}</label></ion-col>
+      <ion-col class="a"><label>{{data.id_Teacher}}</label></ion-col>
+      <ion-col class="a"><label>{{data.firstName_Teacher}}</label></ion-col>
+      <ion-col class="a"><label>{{data.laseName_Teacher}}</label></ion-col>
+      <ion-col class="a"><label>{{data.email_Teacher}}</label></ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="getSutdentById(data.id_student)"></ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" (click)="delete_Teaccher(data.id_Teacher)"></ion-button>
       </ion-col>
     </ion-row>
-    </ion-card>
-    
-    <ion-card>
-    <ion-button expand="full"routerLink="/register">register</ion-button>
-    <ion-button expand="full"routerLink="/calculate">calculate</ion-button>
-    </ion-card>
+
+  </ion-card>
 </ion-content>
