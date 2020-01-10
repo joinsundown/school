@@ -73,15 +73,15 @@ public getById_Coures(id: string) {
 }
 
 public add_Coures(data) {
-  return this.http.get<coures>(CallapiService.host + 'Coures/Add_Course/', data);
+  return this.http.post<coures>(CallapiService.host + 'Coures/Add_Course/', data);
 }
 
 public eidit_Coures(id: string, data) {
-  return this.http.get<coures>(CallapiService.host + 'Coures/Eidit_Course/' + id, data);
+  return this.http.put<coures>(CallapiService.host + 'Coures/Eidit_Course/' + id, data);
 }
 
 public delete_Coures(id: string) {
-  return this.http.get<coures>(CallapiService.host + 'Coures/Delete_Course/' + id);
+  return this.http.delete<coures>(CallapiService.host + 'Coures/Delete_Course/' + id);
 }
 
 }
