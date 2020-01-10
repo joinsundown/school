@@ -13,7 +13,7 @@ export class UpdateteacherPage implements OnInit {
 
 
   id_dataTeacher: any;
-  updateTeacher: userTeacher;
+  update_Teacher: userTeacher;
   all_DataTeacher : FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
@@ -32,6 +32,21 @@ export class UpdateteacherPage implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  getById_Teacher(){
+    this.update_Teacher = this.all_DataTeacher.value;
+    console.log(this.update_Teacher);
+    
+
+this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(id =>{
+
+  console.log(id);
+  
+
+});
+
   }
 
 }

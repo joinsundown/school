@@ -12,7 +12,7 @@ import { userStudent } from 'src/models/userStudent';
 export class UpdatestudentPage implements OnInit {
 
   id_dataStudent: any;
-  updateStudent: userStudent;
+  update_Student: userStudent;
   all_DataStudent: FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {

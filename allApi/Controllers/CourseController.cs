@@ -14,7 +14,7 @@ namespace allApi.Controllers
     [Route("api/[controller]/[action]")]
 
 
-    public class CouresController : ControllerBase
+    public class CourseController : ControllerBase
     {
 
         public static List<Course> Data_Course = new List<Course>
