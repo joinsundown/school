@@ -28,8 +28,8 @@ export class CallapiService {
     return this.http.post<userTeacher>(CallapiService.host + 'Teacher/AddUser_Teacher', data);
   }
 
-  public eidit_Teaccher(id: string, data) {
-    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Teacher/Eidit_Teacher/' + id, data);
+  public edit_Teaccher(id: string, data) {
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Teacher/Edit_Teacher/' + id, data);
   }
 
   public delete_Teaccher(id: string) {
@@ -53,8 +53,8 @@ export class CallapiService {
     return this.http.post<userStudent>(CallapiService.host + 'Student/AddUser_Student', data);
   }
 
-  public eidit_Student(id: string, data) {
-    return this.http.put<userStudent>(CallapiService.host + 'Student/Eidit_Student/' + id, data);
+  public edit_Student(id: string, data) {
+    return this.http.put<userStudent>(CallapiService.host + 'Student/Edit_Student/' + id, data);
   }
 
   public delete_Student(id: string) {
@@ -76,8 +76,8 @@ export class CallapiService {
     return this.http.post<coures>(CallapiService.host + 'Course/Add_Course', data);
   }
 
-  public eidit_Course(id: string, data) {
-    return this.http.put<coures>(CallapiService.host + 'Course/Eidit_Course/' + id, data);
+  public edit_Course(id: string, data) {
+    return this.http.put<coures>(CallapiService.host + 'Course/Edit_Course/' + id, data);
   }
 
   public delete_Course(id: string) {

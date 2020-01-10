@@ -63,7 +63,7 @@ namespace allApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public UserTeacher Eidit_Teacher(string id, [FromBody] UserTeacher Teacher)
+        public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
         {
 
             var _id = Data_Teacher.FirstOrDefault(it => it.Id_Teacher == id.ToString());
