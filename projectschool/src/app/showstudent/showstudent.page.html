@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>showstudent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col><label>ID_student</label></ion-col>
+      <ion-col><label>NAME_student</label></ion-col>
+      <!-- <ion-col><label>SCORE_student</label></ion-col> -->
+      <ion-col><label>TYPE_status</label></ion-col>
+      <ion-col><label>GENDER</label></ion-col>
+      <ion-col><label>EDIT</label></ion-col>
+    </ion-row>
+    <ion-row *ngFor='let data of listSutudent'>
+      <ion-col class="a"><label>{{data.id_student}}</label></ion-col>
+      <ion-col class="a"><label>{{data.name_student}}</label></ion-col>
+      <!-- <ion-col class="a"><label>{{data.score_student}}</label></ion-col> -->
+      <ion-col class="a"><label>{{data.type_status}}</label></ion-col>
+      <ion-col class="a"><label>{{data.gender}}</label></ion-col>
+      <ion-col colspan="2">
+        <ion-button class="b" expand="small" color="primary" (click)="getSutdentById(data.id_student)"></ion-button>
+        <ion-button class="b" expand="small" color="danger" (click)="deleteidStudent(data.id_student)"></ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </ion-card>
+</ion-content>
