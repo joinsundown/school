@@ -29,11 +29,11 @@ export class CallapiService {
   }
 
   public edit_Teaccher(id: string, data) {
-    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Teacher/Edit_Teacher/' + id, data);
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Edit_Teacher/' + id, data);
   }
 
   public delete_Teaccher(id: string) {
-    return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Teacher/Delete_Teacher/' + id);
+    return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Delete_Teacher/' + id);
   }
 
 

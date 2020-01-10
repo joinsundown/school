@@ -36,14 +36,17 @@ export class UpdateteacherPage implements OnInit {
   }
 
   getById_Teacher() {
+    this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(id => {
+      this.all_DataTeacher.patchValue(id)
+      this.update_Teacher = id;
+      console.log(this.all_DataTeacher.value);
     
 
-    this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(id => {
-
-      console.log(id);
-
-
     });
+  }
+
+  editData_Teacher(){
+    this.id_dataTeacher.value;
 
   }
 
