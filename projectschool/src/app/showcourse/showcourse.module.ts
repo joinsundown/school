@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UpdatecouresPageRoutingModule } from './updatecoures-routing.module';
+import { ShowcoursePageRoutingModule } from './showcourse-routing.module';
 
-import { UpdatecouresPage } from './updatecoures.page';
+import { ShowcoursePage } from './showcourse.page';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -15,8 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     HttpClientModule,
-    UpdatecouresPageRoutingModule
+    ShowcoursePageRoutingModule
   ],
-  declarations: [UpdatecouresPage]
+  declarations: [ShowcoursePage]
 })
-export class UpdatecouresPageModule {}
+export class ShowcoursePageModule {}

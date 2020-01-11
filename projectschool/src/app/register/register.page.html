@@ -7,7 +7,7 @@
 <ion-content>
   <ion-item text-center>
 
-    <ion-label padding>REGISTER</ion-label>
+    <ion-label >REGISTER</ion-label>
 
     <ion-select [(ngModel)]="statusop">
       <ion-select-option value="student">STUDENT</ion-select-option>
@@ -16,7 +16,7 @@
   </ion-item>
 
   <form [formGroup]="studentData" (ngSubmit)="add_Student()">
-    <div *ngIf="statusop == 'student'" text-center>
+    <div *ngIf="statusop == 'student'"text-center>
 
       <ion-card>
         <ion-label>Username_Student</ion-label>

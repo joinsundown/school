@@ -16,23 +16,35 @@ export class UpdatestudentPage implements OnInit {
   all_DataStudent: FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
-
-    this.id_dataStudent = this.activate.snapshot.paramMap.get('_id');
-
+    this.id_dataStudent = this.activate.snapshot.paramMap.get('_data');
+    console.log(this.id_dataStudent);
     this.all_DataStudent = this.formbuilder.group({
-      'userName_Student': [null, Validators.required],
-      'passWord_Student': [null, Validators.required],
+      'username_Student': [null, Validators.required],
+      'password_Student': [null, Validators.required],
       'id_Student': [null, Validators.required],
-      'firsName_Student': [null, Validators.required],
+      'firstName_Student': [null, Validators.required],
       'laseName_Student': [null, Validators.required],
       'email_Student': [null, Validators.required]
 
     });
-
-
   }
 
   ngOnInit() {
+    this.getById_Student();
+  }
+  getById_Student() {
+    this.callapi.getById_Student(this.id_dataStudent).subscribe(it => {
+      console.log(it);
+      this.all_DataStudent.patchValue(it)
+      console.log(this.all_DataStudent.value);
+    });
+  }
+
+  edit_Student() {
+    this.update_Student = this.all_DataStudent.value;
+    console.log(this.update_Student);
+    this.callapi.edit_Student(this.id_dataStudent, this.update_Student).subscribe(it => {
+    });
   }
 
 }

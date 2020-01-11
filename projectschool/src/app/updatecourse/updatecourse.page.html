@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>updatecoures</ion-title>
+    <ion-title>updatecourse</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="all_DataCoires" (ngSubmit)="edit_Course()" class="text-center">
+  <form [formGroup]="all_DataCourse" (ngSubmit)="edit_Course()" class="text-center">
 
     <ion-row>
       <ion-col><label>Id_Course</label></ion-col>
@@ -30,7 +30,6 @@
         <ion-button color="danger" routerLink="/showcourse">cancel</ion-button>
       </ion-col>
     </ion-row>
-
 
   </form>
 </ion-content>
