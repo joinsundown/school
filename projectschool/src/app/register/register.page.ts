@@ -39,6 +39,7 @@ export class RegisterPage implements OnInit {
   
 
   }
+ 
 a:string;
   gotostatus() {
     console.log(this.statusop);
@@ -47,6 +48,10 @@ a:string;
   add_Student() {
     this.callapi.add_Student(this.studentData.value).subscribe(it => {
     });
+    console.log(this.studentData.value);
+    console.log(this.studentData.value.username_Student);
+    console.log(this.studentData.value.password_Student);
+    
     this.router.navigate(['/showstudent']);
 
   }

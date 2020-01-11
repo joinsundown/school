@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CallapiService } from '../callapi.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { coures } from 'src/models/coures';
+import { course } from 'src/models/course';
 
 @Component({
   selector: 'app-updatecoures',
@@ -12,7 +12,7 @@ import { coures } from 'src/models/coures';
 export class UpdatecouresPage implements OnInit {
 
 id_dataCoures:any;
-update_Coures: coures;
+update_Coures: course;
 
 all_DataCoires: FormGroup;
 

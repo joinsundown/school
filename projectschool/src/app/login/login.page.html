@@ -7,14 +7,27 @@
     </ion-row>
   </ion-card>
 
-<form >
+  <!-- <ion-item>
+    <ion-label>user</ion-label>
+    <ion-input formControlName="user" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>pass</ion-label>
+    <ion-input formControlName="pass" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="checklogin()">Login</ion-button> -->
+  
+
+<form  [formGroup]="dataUser" (ngSubmit)="checklogin()">
 
 <ion-row>
   <ion-col size ="6" class="center-block" >
     <ion-list>
       <ion-item color="light">
         <ion-label stacked></ion-label>
-        <ion-input type="text"  placeholder="Username"  round></ion-input>
+        <ion-input type="text"  formControlName='user' placeholder="Username" ></ion-input>
       </ion-item>
     </ion-list>
   </ion-col>
@@ -27,7 +40,7 @@
     <ion-list>
       <ion-item color="light">
         <ion-label stacked></ion-label>
-        <ion-input type="Password"  placeholder="Password"></ion-input>
+        <ion-input type="Password" formControlName='pass' placeholder="Password" ></ion-input>
       </ion-item>
     </ion-list>
   </ion-col>
