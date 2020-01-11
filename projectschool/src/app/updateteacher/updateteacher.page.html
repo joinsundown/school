@@ -3,7 +3,97 @@
     <ion-title>updateteacher</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <form [formGroup]="all_DataTeacher" (ngSubmit)="edit_Teaccher()" class="text-center">
+    <ion-card>
+      <ion-row>
+        <ion-col><label>Username_Teacher</label></ion-col>
+        <ion-col><label>Password_Teacher</label></ion-col>
+        <ion-col><label>Id_Teacher</label></ion-col>
+        <ion-col><label>FirstName_Teacher</label></ion-col>
+        <ion-col><label>LaseName_Teacher</label></ion-col>
+        <ion-col><label>Email_Teacher</label></ion-col>
+        <ion-col><label>Update</label></ion-col>
+        <ion-col><label>Cancel</label></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-input formControlName="username_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="password_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="id_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="firstName_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="laseName_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="email_Teacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" type="submit">update</ion-button>
+        </ion-col>
+
+        <ion-col>
+          <ion-button color="danger" routerLink="/showteacher">cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </form>
+
+  <!-- <form [formGroup]="all_DataTeacher" (ngSubmit)="edit_Teaccher()" text-center>
+    <ion-card padding>
+      <ion-row>
+        <ion-col text-right>
+          <ion-label>username_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="username_Teacher" text-left></ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+          <ion-label>password_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="password_Teacher" text-left color="danger"> </ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+          <ion-label>id_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="id_Teacher" text-left color="danger"></ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+          <ion-label>firstName_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="firstName_Teacher" text-left color="danger"></ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+          <ion-label> laseName_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="laseName_Teacher" text-left color="danger"></ion-input>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-right>
+          <ion-label> email_Teacher :</ion-label>
+        </ion-col>
+        <ion-input formControlName="email_Teacher" text-left color="danger"></ion-input>
+      </ion-row>
+      <ion-button expand="small" color="light" type="submit">edit</ion-button>
+      <ion-button expand="small" color="light" routerLink="/home">home</ion-button>
+    </ion-card>
+  </form> -->
 
 </ion-content>

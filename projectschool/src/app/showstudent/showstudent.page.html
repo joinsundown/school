@@ -17,15 +17,15 @@
       <ion-col><label>Delete</label></ion-col>
 
     </ion-row>
-    <ion-row *ngFor='let data of getdataAllstudent'>
-      <ion-col class="a"><label>{{data.username_Student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.password_Student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.id_Student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.firstName_Student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.laseName_Student}}</label></ion-col>
-      <ion-col class="a"><label>{{data.email_Student}}</label></ion-col>
+    <ion-row *ngFor='let data of getdataAllstudent;let i = index'>
+      <ion-col><label>{{data.username_Student}}</label></ion-col>
+      <ion-col><label>{{data.password_Student}}</label></ion-col>
+      <ion-col><label>{{data.id_Student}}</label></ion-col>
+      <ion-col><label>{{data.firstName_Student}}</label></ion-col>
+      <ion-col><label>{{data.laseName_Student}}</label></ion-col>
+      <ion-col><label>{{data.email_Student}}</label></ion-col>
       <ion-col>
-        <ion-button color="primary" (click)="getSutdentById(data.id_student)"></ion-button>
+        <ion-button color="primary" (click)="edit_Student(data.id_Student)"></ion-button>
       </ion-col>
 
       <ion-col>

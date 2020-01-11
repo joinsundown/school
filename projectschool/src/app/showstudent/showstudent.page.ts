@@ -35,4 +35,8 @@ export class ShowstudentPage implements OnInit {
       this.getAllData();
     });
   }
+  edit_Student(data) {
+    console.log(data);
+    this.router.navigate(['/updatestudent', { _data: data }]);
+  }
 }

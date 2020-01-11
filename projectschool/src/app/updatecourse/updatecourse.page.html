@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>updatecourse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="all_DataCourse" (ngSubmit)="edit_Course()" class="text-center">
+
+    <ion-row>
+      <ion-col><label>Id_Course</label></ion-col>
+      <ion-col><label>Name_Course</label></ion-col>
+      <ion-col><label>Update</label></ion-col>
+      <ion-col><label>Cancel</label></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-input formControlName="id_Course"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input formControlName="name_Course"></ion-input>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="primary" type="submit">update</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" routerLink="/showcourse">cancel</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
