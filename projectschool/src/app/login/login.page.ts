@@ -42,7 +42,7 @@ Data : userStudent;
 
   checklogin(){
     for (let og = 0; og <Object.keys(this.Data).length; og++){
-      if (this.Data[og].username_Student == this.dataUser.value.user && this.dataUser.value.pass == this.Data[og].password_Student){
+      if (this.Data[og].usernameStudent == this.dataUser.value.user && this.dataUser.value.pass == this.Data[og].passwordStudent){
         this.route.navigate(['/home']);
      
         console.log(this.dataUser.value);

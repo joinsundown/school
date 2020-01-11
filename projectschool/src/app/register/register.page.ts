@@ -16,21 +16,21 @@ export class RegisterPage implements OnInit {
 
   constructor(public callapi: CallapiService,public formbuilder: FormBuilder,public router: Router) { 
     this.teacherData = this.formbuilder.group({
-      'username_Teacher': [null, Validators.required],
-      'password_Teacher': [null, Validators.required],
-      'id_Teacher': [null, Validators.required],
-      'firstName_Teacher': [null, Validators.required],
-      'laseName_Teacher': [null, Validators.required],
-      'email_Teacher': [null, Validators.required],
+      'usernameTeacher': [null, Validators.required],
+      'passwordTeacher': [null, Validators.required],
+      'idTeacher': [null, Validators.required],
+      'nameTeacher': [null, Validators.required],
+      'statusTeacher': [null, Validators.required],
+      'emailTeacher': [null, Validators.required],
     });
 
     this.studentData = this.formbuilder.group({
-      'username_Student': [null, Validators.required],
-      'password_Student': [null, Validators.required],
-      'id_Student': [null, Validators.required],
-      'firstName_Student': [null, Validators.required],
-      'laseName_Student': [null, Validators.required],
-      'email_Student': [null, Validators.required],
+      'usernameStudent': [null, Validators.required],
+      'passwordStudent': [null, Validators.required],
+      'idStudent': [null, Validators.required],
+      'nameStudent': [null, Validators.required],
+      'statusStudent': [null, Validators.required],
+      'emailStudent': [null, Validators.required],
     });
   }
   

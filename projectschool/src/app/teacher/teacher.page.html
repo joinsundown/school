@@ -6,57 +6,30 @@
 
 <ion-content>
 
-  <ion-card>
-    <ion-row text-center>
-      <ion-col><label>Username</label></ion-col>
-      <ion-col><label>FirstName_Teacher</label></ion-col>
-      <ion-col><label>LaseName_Teacher</label></ion-col>
-      <ion-col><label>Email_Teacher</label></ion-col>
-      <ion-col><label>Edit</label></ion-col>
+  <form [formGroup]="all_DataTeacher" (ngSubmit)="edit_Teaccher()" class="text-center">
+    <ion-card>
+      <ion-row>
 
-    </ion-row>
+        <ion-col><label>Name</label></ion-col>
+        <ion-col><label>Status</label></ion-col>
+        <ion-col><label>Email</label></ion-col>
 
-    <ion-row text-center>
-      <ion-col>
-        <ion-label>tim</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label>timber</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label>numtalboot</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-label>timber_numtalboot@hotmail.co.th</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-button color="light" ></ion-button>
-      </ion-col>
+      </ion-row>
 
-    </ion-row>
-  </ion-card>
+      <ion-row>
 
-  <ion-card>
-    <ion-row text-center>
-      <ion-col><label>รายวิชา</label></ion-col>
-      <ion-col><label>เพิ่มรายวิชา</label></ion-col>
-      <ion-col><label>ลบรายวิชา</label></ion-col>
+        <ion-col>
+          <ion-input disabled formControlName="nameTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input disabled formControlName="statusTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input disabled formControlName="emailTeacher"></ion-input>
+        </ion-col>
+   
+      </ion-row>
+    </ion-card>
 
-    </ion-row>
-
-    <ion-row text-center>
-     
-      <ion-col>
-        <ion-label>programer2</ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-button color="light" ></ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="light" ></ion-button>
-      </ion-col>
-
-    </ion-row>
-  </ion-card>
-
+  </form>
 </ion-content>
