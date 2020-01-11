@@ -64,6 +64,10 @@ export class CallapiService {
   // ------------------------------------------Course-----------------------------------------------------
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f86181afffbff610b22fb7f1a0d3bf012f9abdb
 public getAllData_Course() {
   return this.http.get<course>(CallapiService.host + 'Course/GetAll_DataCourse');
 }
@@ -84,4 +88,8 @@ public delete_Course(id: string) {
   return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f86181afffbff610b22fb7f1a0d3bf012f9abdb
 }
