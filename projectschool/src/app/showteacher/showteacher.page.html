@@ -4,7 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
+
+  <ion-card >
+    <!-- <img src="https://pngimage.net/wp-content/uploads/2018/06/%E0%B8%84%E0%B8%99-icon-png-8.png" /> -->
+  
+
+
+  </ion-card>
   <ion-card>
     <ion-row>
       <ion-col><label>Username_Teacher</label></ion-col>
@@ -22,7 +29,7 @@
       <ion-col><label>{{data.password_Teacher}}</label></ion-col>
       <ion-col><label>{{data.id_Teacher}}</label></ion-col>
       <ion-col><label>{{data.firstName_Teacher}}</label></ion-col>
-      <ion-col><label>{{data.laseName_Teacher}}</label></ion-col>
+      <ion-col><label>{{data.lastName_Teacher}}</label></ion-col>
       <ion-col><label>{{data.email_Teacher}}</label></ion-col>
       <ion-col>
         <ion-button color="primary" (click)="edit_Teaccher(data.id_Teacher)"></ion-button>

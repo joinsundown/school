@@ -3,6 +3,7 @@ import { CallapiService } from '../callapi.service';
 import { userStudent } from 'src/models/userStudent';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ dataUser : FormGroup;
 user : any;
 pass : any;
 Data : userStudent;
+status : any;
 
 
   constructor(public callapi: CallapiService,public formbuilder : FormBuilder,public route: Router ) { 
@@ -32,12 +34,18 @@ Data : userStudent;
       this.Data = it;
       console.log(this.Data);
       console.log(this.dataUser.value);
+      this.status;
     })
+
 
     
   }
 
-
+  a:string;
+  gotostatus(){
+    console.log(status);
+    
+  }
 
 
   checklogin(){

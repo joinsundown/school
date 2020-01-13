@@ -30,12 +30,8 @@ export class UpdateteacherPage implements OnInit {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
     this.getById_Teaccher();
-=======
-    this.getById_Teacher();
 
->>>>>>> 9359bf52864c212998c782e5ad154811ddca7df1
   }
 
   getById_Teaccher() {
@@ -43,17 +39,6 @@ export class UpdateteacherPage implements OnInit {
       console.log(it);
       this.all_DataTeacher.patchValue(it)
       console.log(this.all_DataTeacher.value);
-<<<<<<< HEAD
-    });
-  }
-
-  edit_Teaccher() {
-    this.update_Teacher = this.all_DataTeacher.value;
-    console.log(this.update_Teacher);
-    this.callapi.edit_Teaccher(this.id_dataTeacher, this.update_Teacher).subscribe(it => {
-    });
-  }
-=======
 
 
     });
@@ -66,7 +51,6 @@ export class UpdateteacherPage implements OnInit {
     this.id_dataTeacher.edit_Teaccher(this.id_dataTeacher, this.all_DataTeacher).subscribe(id => {
 
       console.log(id);
->>>>>>> 9359bf52864c212998c782e5ad154811ddca7df1
 
     });
 
