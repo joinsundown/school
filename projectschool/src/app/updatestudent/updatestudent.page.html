@@ -8,34 +8,34 @@
   <form [formGroup]="all_DataStudent" (ngSubmit)="edit_Student()" class="text-center">
     <ion-card>
       <ion-row>
-        <ion-col><label>Username_Student</label></ion-col>
-        <ion-col><label>Password_Student</label></ion-col>
-        <ion-col><label>Id_Student</label></ion-col>
-        <ion-col><label>FirstName_Student</label></ion-col>
-        <ion-col><label>LaseName_Student</label></ion-col>
-        <ion-col><label>Email_Student</label></ion-col>
+        <ion-col><label>Username</label></ion-col>
+        <ion-col><label>Password</label></ion-col>
+        <ion-col><label>Id</label></ion-col>
+        <ion-col><label>Name</label></ion-col>
+        <ion-col><label>Status</label></ion-col>
+        <ion-col><label>Email</label></ion-col>
         <ion-col><label>Update</label></ion-col>
         <ion-col><label>Cancel</label></ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input formControlName="username_Student"></ion-input>
+          <ion-input formControlName="usernameStudent"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="password_Student"></ion-input>
+          <ion-input formControlName="passwordStudent"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="id_Student"></ion-input>
+          <ion-input formControlName="idStudent"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="firstName_Student"></ion-input>
+          <ion-input formControlName="nameStudent"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="laseName_Student"></ion-input>
+          <ion-input formControlName="statusStudent"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="email_Student"></ion-input>
+          <ion-input formControlName="emailStudent"></ion-input>
         </ion-col>
         <ion-col>
           <ion-button color="primary" type="submit">update</ion-button>

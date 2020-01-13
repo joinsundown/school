@@ -7,34 +7,34 @@
   <form [formGroup]="all_DataTeacher" (ngSubmit)="edit_Teaccher()" class="text-center">
     <ion-card>
       <ion-row>
-        <ion-col><label>Username_Teacher</label></ion-col>
-        <ion-col><label>Password_Teacher</label></ion-col>
-        <ion-col><label>Id_Teacher</label></ion-col>
-        <ion-col><label>FirstName_Teacher</label></ion-col>
-        <ion-col><label>LaseName_Teacher</label></ion-col>
-        <ion-col><label>Email_Teacher</label></ion-col>
+        <ion-col><label>Username</label></ion-col>
+        <ion-col><label>Password</label></ion-col>
+        <ion-col><label>Id</label></ion-col>
+        <ion-col><label>Name</label></ion-col>
+        <ion-col><label>Status</label></ion-col>
+        <ion-col><label>Email</label></ion-col>
         <ion-col><label>Update</label></ion-col>
         <ion-col><label>Cancel</label></ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col>
-          <ion-input formControlName="username_Teacher"></ion-input>
+          <ion-input formControlName="usernameTeacher"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="password_Teacher"></ion-input>
+          <ion-input formControlName="passwordTeacher"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="id_Teacher"></ion-input>
+          <ion-input formControlName="idTeacher"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="firstName_Teacher"></ion-input>
+          <ion-input formControlName="nameTeacher"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="laseName_Teacher"></ion-input>
+          <ion-input formControlName="statusTeacher"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input formControlName="email_Teacher"></ion-input>
+          <ion-input formControlName="emailTeacher"></ion-input>
         </ion-col>
         <ion-col>
           <ion-button color="primary" type="submit">update</ion-button>

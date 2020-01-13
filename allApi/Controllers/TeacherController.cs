@@ -22,8 +22,8 @@ namespace allApi.Controllers
         public static List<UserTeacher> Data_Teacher = new List<UserTeacher>
      {
 
-        new UserTeacher {  Username_Teacher = "Teacher", Password_Teacher = "1111", Id_Teacher = "001", FirstName_Teacher ="Supterman", LaseName_Teacher = "Deecee" ,Email_Teacher = "Dee@hotmail.com" },
-        new UserTeacher {  Username_Teacher = "SSer", Password_Teacher = "2222", Id_Teacher = "002", FirstName_Teacher ="Spitderman", LaseName_Teacher = "Marvel" ,Email_Teacher = "Marr@hotmail.com" }
+        new UserTeacher {  UsernameTeacher = "123456", PasswordTeacher = "1111", IdTeacher = "001", NameTeacher ="Timber Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" },
+        new UserTeacher {  UsernameTeacher = "123457", PasswordTeacher = "2222", IdTeacher = "002", NameTeacher ="Timmy Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timmy_Comfort@hotmail.co.th" }
 
     };
 
@@ -38,7 +38,7 @@ namespace allApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<UserTeacher> GetById_Teacher(string id)
         {
-            return Data_Teacher.FirstOrDefault(it => it.Id_Teacher == id.ToString());
+            return Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
         }
 
 
@@ -50,13 +50,13 @@ namespace allApi.Controllers
             var item = new UserTeacher
             {
                 // Id_Teacher = _id.ToString(),
-                Username_Teacher = Teacher.Username_Teacher,
-                Password_Teacher = Teacher.Password_Teacher,
+                UsernameTeacher = Teacher.UsernameTeacher,
+                PasswordTeacher = Teacher.PasswordTeacher,
 
-                Id_Teacher = Teacher.Id_Teacher,
-                FirstName_Teacher = Teacher.FirstName_Teacher,
-                LaseName_Teacher = Teacher.LaseName_Teacher,
-                Email_Teacher = Teacher.Email_Teacher
+                IdTeacher = Teacher.IdTeacher,
+                NameTeacher = Teacher.NameTeacher,
+                StatusTeacher = Teacher.StatusTeacher,
+                EmailTeacher = Teacher.EmailTeacher
             };
             Data_Teacher.Add(item);
             return item;
@@ -66,18 +66,18 @@ namespace allApi.Controllers
         public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
         {
 
-            var _id = Data_Teacher.FirstOrDefault(it => it.Id_Teacher == id.ToString());
+            var _id = Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
 
             var item = new UserTeacher
             {
 
-                Username_Teacher = Teacher.Username_Teacher,
-                Password_Teacher = Teacher.Password_Teacher,
+                UsernameTeacher = Teacher.UsernameTeacher,
+                PasswordTeacher = Teacher.PasswordTeacher,
 
-                Id_Teacher = id.ToString(),
-                FirstName_Teacher = Teacher.FirstName_Teacher,
-                LaseName_Teacher = Teacher.LaseName_Teacher,
-                Email_Teacher = Teacher.Email_Teacher
+                IdTeacher = id.ToString(),
+                NameTeacher = Teacher.NameTeacher,
+                StatusTeacher = Teacher.StatusTeacher,
+                EmailTeacher = Teacher.EmailTeacher
             };
             Data_Teacher.Remove(_id);
             Data_Teacher.Add(item);
@@ -88,7 +88,7 @@ namespace allApi.Controllers
         [HttpDelete("{id}")]
         public void Delete_Teacher(string id)
         {
-            var data = Data_Teacher.FirstOrDefault(it => it.Id_Teacher == id.ToString());
+            var data = Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
             Data_Teacher.Remove(data);
 
         }

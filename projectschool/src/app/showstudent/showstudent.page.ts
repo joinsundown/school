@@ -25,8 +25,8 @@ export class ShowstudentPage implements OnInit {
   getAllData() {
     this.callapi.getAllData_Student().subscribe(data => {
       this.getdataAllstudent = data;
-      console.log(this.getdataAllstudent.username_Student);
-      console.log(this.getdataAllstudent.password_Student);
+      console.log(this.getdataAllstudent.usernameStudent);
+      console.log(this.getdataAllstudent.passwordStudent);
 
     });
   }

@@ -7,29 +7,29 @@
 <ion-content>
   <ion-card>
     <ion-row>
-      <ion-col><label>Username_Student</label></ion-col>
-      <ion-col><label>Password_Student</label></ion-col>
-      <ion-col><label>Id_Student</label></ion-col>
-      <ion-col><label>FirstName_Student</label></ion-col>
-      <ion-col><label>LaseName_Student</label></ion-col>
-      <ion-col><label>Email_Student</label></ion-col>
+      <ion-col><label>Username</label></ion-col>
+      <ion-col><label>Password</label></ion-col>
+      <ion-col><label>Id</label></ion-col>
+      <ion-col><label>Name</label></ion-col>
+      <ion-col><label>Status</label></ion-col>
+      <ion-col><label>Email</label></ion-col>
       <ion-col><label>Edit</label></ion-col>
       <ion-col><label>Delete</label></ion-col>
 
     </ion-row>
     <ion-row *ngFor='let data of getdataAllstudent;let i = index'>
-      <ion-col><label>{{data.username_Student}}</label></ion-col>
-      <ion-col><label>{{data.password_Student}}</label></ion-col>
-      <ion-col><label>{{data.id_Student}}</label></ion-col>
-      <ion-col><label>{{data.firstName_Student}}</label></ion-col>
-      <ion-col><label>{{data.laseName_Student}}</label></ion-col>
-      <ion-col><label>{{data.email_Student}}</label></ion-col>
+      <ion-col><label>{{data.usernameStudent}}</label></ion-col>
+      <ion-col><label>{{data.passwordStudent}}</label></ion-col>
+      <ion-col><label>{{data.idStudent}}</label></ion-col>
+      <ion-col><label>{{data.nameStudent}}</label></ion-col>
+      <ion-col><label>{{data.statusStudent}}</label></ion-col>
+      <ion-col><label>{{data.emailStudent}}</label></ion-col>
       <ion-col>
-        <ion-button color="primary" (click)="edit_Student(data.id_Student)"></ion-button>
+        <ion-button color="primary" (click)="edit_Student(data.idStudent)"></ion-button>
       </ion-col>
 
       <ion-col>
-        <ion-button color="danger" (click)="delete_Student(data.id_Student)"></ion-button>
+        <ion-button color="danger" (click)="delete_Student(data.idStudent)"></ion-button>
       </ion-col>
     </ion-row>
 

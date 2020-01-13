@@ -19,12 +19,12 @@ export class UpdatestudentPage implements OnInit {
     this.id_dataStudent = this.activate.snapshot.paramMap.get('_data');
     console.log(this.id_dataStudent);
     this.all_DataStudent = this.formbuilder.group({
-      'username_Student': [null, Validators.required],
-      'password_Student': [null, Validators.required],
-      'id_Student': [null, Validators.required],
-      'firstName_Student': [null, Validators.required],
-      'laseName_Student': [null, Validators.required],
-      'email_Student': [null, Validators.required]
+      'usernameStudent': [null, Validators.required],
+      'passwordStudent': [null, Validators.required],
+      'idStudent': [null, Validators.required],
+      'nameStudent': [null, Validators.required],
+      'statusStudent': [null, Validators.required],
+      'emailStudent': [null, Validators.required]
 
     });
   }
@@ -32,26 +32,19 @@ export class UpdatestudentPage implements OnInit {
   ngOnInit() {
     this.getById_Student();
   }
-
   getById_Student() {
-    this.callapi.getById_Student(this.id_dataStudent).subscribe(id => {
-      this.all_DataStudent.patchValue(id)
-      this.update_Student = id;
+    this.callapi.getById_Student(this.id_dataStudent).subscribe(it => {
+      console.log(it);
+      this.all_DataStudent.patchValue(it)
       console.log(this.all_DataStudent.value);
     });
   }
 
-  editData_Student() {
+  edit_Student() {
     this.update_Student = this.all_DataStudent.value;
     console.log(this.update_Student);
-    
-    this.id_dataStudent.edit_Student(this.id_dataStudent, this.all_DataStudent).subscribe(id => {
-
-      console.log(id);
-
+    this.callapi.edit_Student(this.id_dataStudent, this.update_Student).subscribe(it => {
     });
-
-    this.router.navigate(['/home']);
   }
 
 }

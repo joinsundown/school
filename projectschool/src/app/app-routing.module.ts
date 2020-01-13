@@ -25,6 +25,18 @@ const routes: Routes = [
     loadChildren: () => import('./showstudent/showstudent.module').then( m => m.ShowstudentPageModule)
   },
   {
+    path: 'updateteacher',
+    loadChildren: () => import('./updateteacher/updateteacher.module').then( m => m.UpdateteacherPageModule)
+  },
+  {
+    path: 'updatestudent',
+    loadChildren: () => import('./updatestudent/updatestudent.module').then( m => m.UpdatestudentPageModule)
+  },
+  {
+    path: 'showcourse',
+    loadChildren: () => import('./showcourse/showcourse.module').then( m => m.ShowcoursePageModule)
+  },
+  {
     path: 'updatecourse',
     loadChildren: () => import('./updatecourse/updatecourse.module').then( m => m.UpdatecoursePageModule)
   },
