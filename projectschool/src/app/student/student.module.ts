@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TeacherPageRoutingModule } from './teacher-routing.module';
+import { StudentPageRoutingModule } from './student-routing.module';
 
-import { TeacherPage } from './teacher.page';
+import { StudentPage } from './student.page';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -15,8 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     HttpClientModule,
-    TeacherPageRoutingModule
+    StudentPageRoutingModule
   ],
-  declarations: [TeacherPage]
+  declarations: [StudentPage]
 })
-export class TeacherPageModule {}
+export class StudentPageModule {}

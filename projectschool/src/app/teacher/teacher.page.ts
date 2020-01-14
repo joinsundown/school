@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userTeacher } from 'src/models/userTeacher';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { CallapiService } from '../callapi.service';
 
 @Component({
@@ -10,41 +9,34 @@ import { CallapiService } from '../callapi.service';
   styleUrls: ['./teacher.page.scss'],
 })
 export class TeacherPage implements OnInit {
-  id_dataTeacher: any;
-  update_Teacher: userTeacher;
-  all_DataTeacher: FormGroup;
 
-  constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
-    this.id_dataTeacher = this.activate.snapshot.paramMap.get('_data');
-    console.log(this.id_dataTeacher);
-    this.all_DataTeacher = this.formbuilder.group({
-      'usernameTeacher': [null, Validators.required],
-      'passwordTeacher': [null, Validators.required],
-      'idTeacher': [null, Validators.required],
-      'nameTeacher': [null, Validators.required],
-      'statusTeacher': [null, Validators.required],
-      'emailTeacher': [null, Validators.required]
+  getdataAllteacher: userTeacher;
 
-    });
-  }
+  constructor(public callapi: CallapiService, public router: Router) { }
 
   ngOnInit() {
-    this.getById_Teaccher();
+    this.getAllData();
+  }
+  ionViewDidEnter() {
+    this.getAllData();
   }
 
-  getById_Teaccher() {
-    this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(it => {
-      console.log(it);
-      this.all_DataTeacher.patchValue(it)
-      console.log(this.all_DataTeacher.value);
+  getAllData() {
+    this.callapi.getAllData_Teaccher().subscribe(data => {
+      this.getdataAllteacher = data;
+      console.log(this.getdataAllteacher);
+
     });
   }
 
-  edit_Teaccher() {
-    this.update_Teacher = this.all_DataTeacher.value;
-    console.log(this.update_Teacher);
-    this.callapi.edit_Teaccher(this.id_dataTeacher, this.update_Teacher).subscribe(it => {
+  delete_Teaccher(id) {
+    this.callapi.delete_Teaccher(id).subscribe(data => {
+      this.getAllData();
     });
-  }
 
+  }
+  edit_Teaccher(data) {
+    console.log(data);
+    this.router.navigate(['/updateteacher', { _data: data }]);
+  }
 }

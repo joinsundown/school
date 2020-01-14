@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>showstudent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col><label>Username</label></ion-col>
+      <ion-col><label>Password</label></ion-col>
+      <ion-col><label>Id</label></ion-col>
+      <ion-col><label>Name</label></ion-col>
+      <ion-col><label>Status</label></ion-col>
+      <ion-col><label>Email</label></ion-col>
+      <ion-col><label>Edit</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
+
+    </ion-row>
+    <ion-row *ngFor='let data of getdataAllstudent;let i = index'>
+      <ion-col><label>{{data.usernameStudent}}</label></ion-col>
+      <ion-col><label>{{data.passwordStudent}}</label></ion-col>
+      <ion-col><label>{{data.idStudent}}</label></ion-col>
+      <ion-col><label>{{data.nameStudent}}</label></ion-col>
+      <ion-col><label>{{data.statusStudent}}</label></ion-col>
+      <ion-col><label>{{data.emailStudent}}</label></ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="edit_Student(data.idStudent)"></ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" (click)="delete_Student(data.idStudent)"></ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

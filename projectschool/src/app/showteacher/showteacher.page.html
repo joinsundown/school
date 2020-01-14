@@ -4,41 +4,52 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content>
 
-  <ion-card >
-    <!-- <img src="https://pngimage.net/wp-content/uploads/2018/06/%E0%B8%84%E0%B8%99-icon-png-8.png" /> -->
-  
-
+  <ion-card>
 
   </ion-card>
   <ion-card>
-    <ion-row>
-      <ion-col><label>Username</label></ion-col>
-      <ion-col><label>Password</label></ion-col>
+    <ion-row text-center>
+
       <ion-col><label>Id</label></ion-col>
       <ion-col><label>Name</label></ion-col>
       <ion-col><label>Status</label></ion-col>
       <ion-col><label>Email</label></ion-col>
+      <ion-col><label>SelectCourse</label></ion-col>
       <ion-col><label>Update</label></ion-col>
       <ion-col><label>Delete</label></ion-col>
 
     </ion-row>
-    <ion-row *ngFor='let data of getdataAllteacher;let i = index'>
-      <ion-col><label>{{data.usernameTeacher}}</label></ion-col>
-      <ion-col><label>{{data.passwordTeacher}}</label></ion-col>
-      <ion-col><label>{{data.idTeacher}}</label></ion-col>
-      <ion-col><label>{{data.nameTeacher}}</label></ion-col>
-      <ion-col><label>{{data.statusTeacher}}</label></ion-col>
-      <ion-col><label>{{data.emailTeacher}}</label></ion-col>
+
+    <ion-row text-center *ngIf="showDatateacher != null">
+      <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.statusTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
+      <ion-col> <label class="item item-input item-select">
+          <div class="input-label"></div>
+
+          <select>
+            <option disabled>เลือกวิชาที่จะเปิดสอน</option>
+            <option>ภาษาไทยเชิงวิชาการ</option>
+            <option>ภาษาอังกฤษเพื่อการสื่อสารประจำวัน</option>
+            <option>ภาษาจีนเพื่อการสื่อสาร</option>
+            <option>คณิตศาตร์ประยุกต์</option>
+            <option>ดนตรีเพื่อชีวิต</option>
+            <option>การลงทุนเพื่อจัดการความเสี่ยง</option>
+          </select>
+        </label></ion-col>
       <ion-col>
-        <ion-button color="primary" (click)="edit_Teaccher(data.idTeacher)"></ion-button>
+        <ion-button color="primary" (click)="edit_Teaccher(data.idTeacher)">EDIT</ion-button>
       </ion-col>
 
       <ion-col>
-        <ion-button color="danger" (click)="delete_Teaccher(data.idTeacher)"></ion-button>
+        <ion-button color="danger" (click)="delete_Teaccher(data.idTeacher)">DELETE</ion-button>
       </ion-col>
+
     </ion-row>
+
 
   </ion-card>
 </ion-content>

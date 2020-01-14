@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { userTeacher } from 'src/models/userTeacher';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CallapiService } from '../callapi.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-showteacher',
@@ -10,33 +11,41 @@ import { CallapiService } from '../callapi.service';
 })
 export class ShowteacherPage implements OnInit {
 
-  getdataAllteacher: userTeacher;
+  idDatateacher: any;
+  showDatateacher : userTeacher;
+  getdatateacher: FormGroup;
+  
+  constructor(public callapi: CallapiService, public activate: ActivatedRoute, public router: Router, public formbuilder: FormBuilder) {
+    this.idDatateacher = this.activate.snapshot.paramMap.get('_data');
+    console.log(this.idDatateacher);
+    
+    this.getdatateacher = this.formbuilder.group({
+      'idTeacher': [null, Validators.required],
+      'nameTeacher': [null, Validators.required],
+      'statusTeacher': [null, Validators.required],
+      'emailTeacher': [null, Validators.required]
 
-  constructor(public callapi: CallapiService, public router: Router) { }
+    });
+
+  }
 
   ngOnInit() {
-    this.getAllData();
-  }
-  ionViewDidEnter() {
-    this.getAllData();
+    this.getTeacherById();
+    console.log(this.getdatateacher);
+    
   }
 
-  getAllData() {
-    this.callapi.getAllData_Teaccher().subscribe(data => {
-      this.getdataAllteacher = data;
-      console.log(this.getdataAllteacher);
-
+  getTeacherById() {
+    this.callapi.getById_Teaccher(this.idDatateacher).subscribe(it => {
+      console.log(it);
+      this.showDatateacher = it;
+      console.log(this.showDatateacher.idTeacher);
+      
+      
     });
+    
   }
 
-  delete_Teaccher(id) {
-    this.callapi.delete_Teaccher(id).subscribe(data => {
-      this.getAllData();
-    });
+  }
 
-  }
-  edit_Teaccher(data) {
-    console.log(data);
-    this.router.navigate(['/updateteacher', { _data: data }]);
-  }
-}
+

@@ -52,14 +52,14 @@ a:string;
     console.log(this.studentData.value.username_Student);
     console.log(this.studentData.value.password_Student);
     
-    this.router.navigate(['/showstudent']);
+    this.router.navigate(['/student']);
 
   }
 
   add_Teacher() {
     this.callapi.add_Teaccher(this.teacherData.value).subscribe(it => {
     });
-    this.router.navigate(['/showteacher']);
+    this.router.navigate(['/teacher']);
 
   }
 

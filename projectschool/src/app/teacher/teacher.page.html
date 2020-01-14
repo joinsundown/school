@@ -1,35 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>teacher</ion-title>
+    <ion-title>SHOWTEACHER</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen>
 
-  <form [formGroup]="all_DataTeacher" (ngSubmit)="edit_Teaccher()" class="text-center">
-    <ion-card>
-      <ion-row>
+  <ion-card >
+    <!-- <img src="https://pngimage.net/wp-content/uploads/2018/06/%E0%B8%84%E0%B8%99-icon-png-8.png" /> -->
+  
 
-        <ion-col><label>Name</label></ion-col>
-        <ion-col><label>Status</label></ion-col>
-        <ion-col><label>Email</label></ion-col>
 
-      </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col><label>Username</label></ion-col>
+      <ion-col><label>Password</label></ion-col>
+      <ion-col><label>Id</label></ion-col>
+      <ion-col><label>Name</label></ion-col>
+      <ion-col><label>Status</label></ion-col>
+      <ion-col><label>Email</label></ion-col>
+      <ion-col><label>Update</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
 
-      <ion-row>
+    </ion-row>
+    <ion-row *ngFor='let data of getdataAllteacher;let i = index'>
+      <ion-col><label>{{data.usernameTeacher}}</label></ion-col>
+      <ion-col><label>{{data.passwordTeacher}}</label></ion-col>
+      <ion-col><label>{{data.idTeacher}}</label></ion-col>
+      <ion-col><label>{{data.nameTeacher}}</label></ion-col>
+      <ion-col><label>{{data.statusTeacher}}</label></ion-col>
+      <ion-col><label>{{data.emailTeacher}}</label></ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="edit_Teaccher(data.usernameTeacher)"></ion-button>
+      </ion-col>
 
-        <ion-col>
-          <ion-input disabled formControlName="nameTeacher"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-input disabled formControlName="statusTeacher"></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-input disabled formControlName="emailTeacher"></ion-input>
-        </ion-col>
-   
-      </ion-row>
-    </ion-card>
+      <ion-col>
+        <ion-button color="danger" (click)="delete_Teaccher(data.idTeacher)"></ion-button>
+      </ion-col>
+    </ion-row>
 
-  </form>
+  </ion-card>
 </ion-content>

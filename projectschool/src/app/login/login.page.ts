@@ -19,7 +19,8 @@ export class LoginPage implements OnInit {
   DataS: userStudent;
   DataT: userTeacher;
   status: any;
-
+a;
+s;
 
   constructor(public callapi: CallapiService, public formbuilder: FormBuilder, public route: Router) {
     this.dataUser = this.formbuilder.group({
@@ -57,20 +58,23 @@ export class LoginPage implements OnInit {
       
       if (this.DataS[og].usernameStudent == this.dataUser.value.user && this.dataUser.value.pass == this.DataS[og].passwordStudent) {
         console.log(this.DataS[og].statusStudent);
+        this.s = this.DataS[og].idStudent;
 
 
-        this.route.navigate(['/home']);
+        this.route.navigate(['/showstudent', { _data: this.DataS[og].idStudent }]);
 
         console.log(this.dataUser.value);
 
       }       
        else if (this.DataT[og].usernameTeacher == this.dataUser.value.user && this.dataUser.value.pass == this.DataT[og].passwordTeacher) {
         console.log(this.DataT[og].statusTeacher);
+        this.a = this.DataT[og].idTeacher;
+        console.log(this.a);
+        
 
 
-
-        this.route.navigate(['/showteacher']);
-
+        this.route.navigate(['/showteacher', { _data: this.DataT[og].idTeacher }]);
+        
         console.log(this.dataUser.value);
 
       } 
