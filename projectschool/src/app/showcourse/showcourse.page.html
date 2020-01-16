@@ -14,8 +14,8 @@
 
     </ion-row>
     <ion-row *ngFor='let data of getdataAllcourse;let i = index'>
-      <ion-col><label>{{data.id_Course}}</label></ion-col>
-      <ion-col><label>{{data.name_Course}}</label></ion-col>
+      <ion-col><label>{{data.idCourse}}</label></ion-col>
+      <ion-col><label>{{data.nameCourse}}</label></ion-col>
 
       <ion-col>
         <ion-button color="primary" (click)="edit_Course(data.id_Course)"></ion-button>

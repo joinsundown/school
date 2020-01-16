@@ -3,11 +3,11 @@ namespace allApi.Models{
 
 
     public class Course {
+        public string IdCourse { get; set; }
 
+        public string NameCourse { get; set; }
 
-        public string Id_Course { get; set; }
-
-        public string Name_Course { get; set; }
+        
 
 
 

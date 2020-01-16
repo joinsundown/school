@@ -4,6 +4,7 @@ export class userTeacher {
     passwordTeacher: string;
     idTeacher: string;
     nameTeacher: string;
+    
     statusTeacher: string;
     emailTeacher: string;
 }

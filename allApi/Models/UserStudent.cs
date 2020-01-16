@@ -4,12 +4,12 @@ namespace allApi.Models
     {
 
 
+        public string IdStudent { get; set; }
 
         public string UsernameStudent { get; set; }
-        
+
         public string PasswordStudent { get; set; }
 
-        public string IdStudent { get; set; }
 
         public string NameStudent { get; set; }
 
@@ -17,5 +17,10 @@ namespace allApi.Models
 
         public string EmailStudent { get; set; }
 
+
+
+        public string Score_Mid { get; set; }
+        public string Score_Final { get; set; }
+        public string Coruse_Grade { get; set; }
     }
 }

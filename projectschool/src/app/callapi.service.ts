@@ -4,6 +4,7 @@ import { userTeacher } from '../models/userTeacher';
 import { userStudent } from '../models/userStudent';
 import { course } from '../models/course';
 import { from } from 'rxjs';
+import { opencourse } from '../models/opencourse';
 
 @Injectable({
   providedIn: 'root'
@@ -82,6 +83,28 @@ public edit_Course(id: string, data) {
 
 public delete_Course(id: string) {
   return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
+}
+
+//----------------------------------------------opencourse-----------------------------------------------------
+
+public getAllData_OpenCourse() {
+  return this.http.get<opencourse>(CallapiService.host + 'Opencourse/GetAll_DataOpencourse');
+}
+
+public getById_OpenCourse(id: string) {
+  return this.http.get<opencourse>(CallapiService.host + 'Opencourse/GetById_Opencourse/' + id);
+}
+
+public add_OpenCourse(data) {
+  return this.http.post<course>(CallapiService.host + 'Opencourse/AddOpencourse', data);
+}
+
+public edit_OpenCourse(id: string, data) {
+  return this.http.put<opencourse>(CallapiService.host + 'Opencourse/Edit_Opencourse/' + id, data);
+}
+
+public delete_OpenCourse(id: string) {
+  return this.http.delete<opencourse>(CallapiService.host + 'Opencourse/Delete_Opencourse/' + id);
 }
 
 }

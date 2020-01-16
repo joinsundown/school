@@ -19,8 +19,8 @@ export class LoginPage implements OnInit {
   DataS: userStudent;
   DataT: userTeacher;
   status: any;
-a;
-s;
+  a;
+  s;
 
   constructor(public callapi: CallapiService, public formbuilder: FormBuilder, public route: Router) {
     this.dataUser = this.formbuilder.group({
@@ -54,8 +54,8 @@ s;
   }
 
   checklogin() {
-    for (let og = 0; og < Object.keys(this.DataS).length && Object.keys(this.DataS).length; og++) {
-      
+    for (let og = 0; og < Object.keys(this.DataS).length; og++) {
+
       if (this.DataS[og].usernameStudent == this.dataUser.value.user && this.dataUser.value.pass == this.DataS[og].passwordStudent) {
         console.log(this.DataS[og].statusStudent);
         this.s = this.DataS[og].idStudent;
@@ -65,19 +65,21 @@ s;
 
         console.log(this.dataUser.value);
 
-      }       
-       else if (this.DataT[og].usernameTeacher == this.dataUser.value.user && this.dataUser.value.pass == this.DataT[og].passwordTeacher) {
-        console.log(this.DataT[og].statusTeacher);
-        this.a = this.DataT[og].idTeacher;
-        console.log(this.a);
-        
+      }
+      for (let og = 0; og < Object.keys(this.DataT).length; og++)
+
+        if (this.DataT[og].usernameTeacher == this.dataUser.value.user && this.dataUser.value.pass == this.DataT[og].passwordTeacher) {
+          console.log(this.DataT[og].statusTeacher);
+          this.a = this.DataT[og].idTeacher;
+          console.log(this.a);
 
 
-        this.route.navigate(['/showteacher', { _data: this.DataT[og].idTeacher }]);
-        
-        console.log(this.dataUser.value);
 
-      } 
+          this.route.navigate(['/showteacher', { _data: this.DataT[og].idTeacher }]);
+
+          console.log(this.dataUser.value);
+
+        }
     }
 
   }

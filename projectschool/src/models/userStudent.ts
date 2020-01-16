@@ -6,4 +6,5 @@ export class userStudent {
     nameStudent: string;
     statusStudent: string;
     emailStudent: string;
+    
 }

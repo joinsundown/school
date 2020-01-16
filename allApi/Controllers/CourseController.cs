@@ -20,8 +20,8 @@ namespace allApi.Controllers
         public static List<Course> Data_Course = new List<Course>
      {
 
-        new Course { Id_Course = "001", Name_Course = "Test" },
-        new Course { Id_Course = "002", Name_Course = "SSSS" }
+        new Course { IdCourse = "001", NameCourse = "Test" },
+        new Course { IdCourse = "002", NameCourse = "SSSS" }
 
 
     };
@@ -36,7 +36,7 @@ namespace allApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<Course> GetById_Course(string id)
         {
-            return Data_Course.FirstOrDefault(it => it.Id_Course == id.ToString());
+            return Data_Course.FirstOrDefault(it => it.IdCourse == id.ToString());
         }
 
 
@@ -48,8 +48,8 @@ namespace allApi.Controllers
             var item = new Course
             {
                 // Id_Teacher = _id.ToString(),
-                Id_Course = CourseAll.Id_Course,
-                Name_Course = CourseAll.Name_Course,
+                IdCourse = CourseAll.IdCourse,
+                NameCourse = CourseAll.NameCourse,
            
             };
             Data_Course.Add(item);
@@ -61,12 +61,12 @@ namespace allApi.Controllers
         public Course Edit_Course(string id, [FromBody] Course CourseAll)
         {
 
-            var _id = Data_Course.FirstOrDefault(it => it.Id_Course == id.ToString());
+            var _id = Data_Course.FirstOrDefault(it => it.IdCourse == id.ToString());
 
             var item = new Course
             {
-                Id_Course = id.ToString(),
-                Name_Course = CourseAll.Name_Course,
+                IdCourse = id.ToString(),
+                NameCourse = CourseAll.NameCourse,
                 
             };
             Data_Course.Remove(_id);
@@ -78,7 +78,7 @@ namespace allApi.Controllers
          [HttpDelete ("{id}")]
         public void Delete_Course(string id)
         {
-            var data = Data_Course.FirstOrDefault(it => it.Id_Course == id.ToString());
+            var data = Data_Course.FirstOrDefault(it => it.IdCourse == id.ToString());
             Data_Course.Remove(data);
          
         }

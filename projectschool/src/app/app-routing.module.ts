@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'teacher',
     loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
+  },
+  {
+    path: 'opencourse',
+    loadChildren: () => import('./opencourse/opencourse.module').then( m => m.OpencoursePageModule)
   }
 
 

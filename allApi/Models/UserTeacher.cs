@@ -4,11 +4,11 @@ namespace allApi.Models
 
     public class UserTeacher
     {
+        public string IdTeacher { get; set; }
         public string UsernameTeacher { get; set; }
 
         public string PasswordTeacher { get; set; }
 
-        public string IdTeacher { get; set; }
 
         public string NameTeacher { get; set; }
 

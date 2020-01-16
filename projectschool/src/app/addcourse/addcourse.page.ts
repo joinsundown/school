@@ -15,8 +15,8 @@ export class AddcoursePage implements OnInit {
 
   constructor(public callapi:CallapiService,public formbuilder: FormBuilder) {
     this.courseData = this.formbuilder.group({
-      'id_Course':[null,Validators.required],
-      'name_Course':[null,Validators.required]
+      'idCourse':[null,Validators.required],
+      'nameCourse':[null,Validators.required]
     });
    }
 

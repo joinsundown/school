@@ -31,8 +31,16 @@
         <ion-label>Name</ion-label>
         <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='nameStudent'></ion-input>
 
-        <ion-label>Status</ion-label>
-        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='statusStudent'></ion-input>
+        <label class="item item-input item-select">Status
+          <div class="input-label" ></div><br>
+
+          <select formControlName='statusStudent'>
+           
+            <option>ครู/อาจารย์</option>
+            <option>นักเรียน</option>
+           
+          </select>
+        </label><br><br>
 
         <ion-label>Email</ion-label>
         <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='emailStudent'></ion-input>
@@ -63,8 +71,15 @@
         <ion-label>Name</ion-label>
         <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='nameTeacher'></ion-input>
 
-        <ion-label>Status</ion-label>
-        <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='statusTeacher'></ion-input>
+        <label class="item item-input item-select" >Status
+          <div class="input-label" ></div><br>
+
+          <select formControlName='statusTeacher' >
+            <option>ครู/อาจารย์</option>
+            <option>นักเรียน</option>
+           
+          </select>
+        </label><br><br>
 
         <ion-label>Email</ion-label>
         <ion-input placeholder="กรุณากรอกข้อมูล" formControlName='emailTeacher'></ion-input>
