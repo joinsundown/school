@@ -47,7 +47,7 @@ namespace allApi.Controllers
             // var _id = Guid.NewGuid().ToString();
             var item = new Course
             {
-                // Id_Teacher = _id.ToString(),
+                
                 IdCourse = CourseAll.IdCourse,
                 NameCourse = CourseAll.NameCourse,
            

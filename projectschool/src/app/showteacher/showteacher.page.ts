@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userTeacher } from 'src/models/userTeacher';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CallapiService } from '../callapi.service';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { course } from '../../models/course';
 import { opencourse } from '../../models/opencourse';
@@ -29,7 +30,8 @@ export class ShowteacherPage implements OnInit {
   addopencourseData: opencourse;
   asd;
   showteachercourse :any;
-
+  showcourseteacher:string [] = [];
+a;
   datax = {
     "idCourse":null,
     "nameCourse":null,
@@ -67,15 +69,21 @@ export class ShowteacherPage implements OnInit {
     this.getTeacherById();
     console.log(this.getdatateacher);
     this.getCourse();
-    this.allshowcourse();
+    // this.allshowcourse();
   }
 
   getTeacherById() {
     this.callapi.getById_Teaccher(this.idDatateacher).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
-      console.log(this.showDatateacher.idTeacher);
-
+      for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
+        this.showcourseteacher[index] = this.showDatateacher.course[index];
+        console.log(this.showcourseteacher[index]);
+        this.a = this.showcourseteacher;
+        console.log(this.a);
+        
+      }
+      
 
     });
 
@@ -105,7 +113,8 @@ export class ShowteacherPage implements OnInit {
     this.datax.idCourse = filter.idCourse;
     this.datax.nameCourse = filter.nameCourse;
     console.log(this.datax);
-    this.callapi.add_OpenCourse(this.datax).subscribe(it =>{
+
+    this.callapi.AddCourseToTeacher(this.idDatateacher, this.datax).subscribe(it =>{
       console.log(it);
     });
 
@@ -130,14 +139,14 @@ export class ShowteacherPage implements OnInit {
       console.log(data);    })
   }
 
-  allshowcourse(){
-    this.callapi.getAllData_OpenCourse().subscribe(it => {
-      console.log(it);
-      this.showteachercourse = it;
+  // allshowcourse(){
+  //   this.callapi.getAllData_OpenCourse().subscribe(it => {
+  //     console.log(it);
+  //     this.showteachercourse = it;
       
-    })
+  //   })
     
-  }
+  // }
 }
 
 

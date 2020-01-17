@@ -18,19 +18,31 @@ namespace allApi.Controllers
 
     public class TeacherController : ControllerBase
     {
-
-        public static List<UserTeacher> Data_Teacher = new List<UserTeacher>
+        
+        public static List<Course> CourseData = new List<Course>
      {
 
-        new UserTeacher {  UsernameTeacher = "123456", PasswordTeacher = "1111", IdTeacher = "001", NameTeacher ="Timber Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" },
-        new UserTeacher {  UsernameTeacher = "123457", PasswordTeacher = "2222", IdTeacher = "002", NameTeacher ="Timmy Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timmy_Comfort@hotmail.co.th" }
+        new Course { IdCourse = "12345", NameCourse = "Test" },
+        new Course { IdCourse = "Name222", NameCourse = "Tee214554684684" }
+
 
     };
 
+        public static List<UserTeacher> DataTeacher = new List<UserTeacher>
+     {
+
+        new UserTeacher {  UsernameTeacher = "123456", PasswordTeacher = "1111", IdTeacher = "001", NameTeacher ="Timber Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
+        new UserTeacher {  UsernameTeacher = "123", PasswordTeacher = "123", IdTeacher = "500", NameTeacher ="Timber xxxxxxx", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_xxxxxxx@hotmail.co.th",Course = CourseData.ToArray() },
+        new UserTeacher {  UsernameTeacher = "123457", PasswordTeacher = "2222", IdTeacher = "002", NameTeacher ="Timmy Comfort", StatusTeacher = "Teacher" ,EmailTeacher = "Timmy_Comfort@hotmail.co.th",Course = CourseData.ToArray() }
+
+    };
+
+
+
         [HttpGet]
-        public ActionResult<IEnumerable<UserTeacher>> GetAllData_Teacher()
+        public ActionResult<IEnumerable<UserTeacher>> GetAllDataTeacher()
         {
-            return Data_Teacher.ToList();
+            return DataTeacher.ToList();
 
         }
 
@@ -38,7 +50,7 @@ namespace allApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<UserTeacher> GetById_Teacher(string id)
         {
-            return Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            return DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
         }
 
 
@@ -56,42 +68,92 @@ namespace allApi.Controllers
                 IdTeacher = Teacher.IdTeacher,
                 NameTeacher = Teacher.NameTeacher,
                 StatusTeacher = Teacher.StatusTeacher,
-                EmailTeacher = Teacher.EmailTeacher
+                EmailTeacher = Teacher.EmailTeacher,
+                Course = CourseData.ToArray()
             };
-            Data_Teacher.Add(item);
+            DataTeacher.Add(item);
             return item;
         }
+
 
         [HttpPut("{id}")]
-        public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
+        public UserTeacher AddCourseToTeacher(string id, [FromBody] Course coure)
         {
 
-            var _id = Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            var sss = data.Course.ToList();
 
-            var item = new UserTeacher
+            // var _id = Guid.NewGuid().ToString();
+            var item = new Course
             {
+                // Id_Teacher = _id.ToString(),
+                IdCourse = coure.IdCourse,
+                NameCourse = coure.NameCourse
 
-                UsernameTeacher = Teacher.UsernameTeacher,
-                PasswordTeacher = Teacher.PasswordTeacher,
-
-                IdTeacher = id.ToString(),
-                NameTeacher = Teacher.NameTeacher,
-                StatusTeacher = Teacher.StatusTeacher,
-                EmailTeacher = Teacher.EmailTeacher
             };
-            Data_Teacher.Remove(_id);
-            Data_Teacher.Add(item);
+            sss.Add(item);
+            Console.WriteLine(sss.ToList());
 
-            return item;
+            var item2 = new UserTeacher
+            {
+                IdTeacher = id.ToString(),
+                UsernameTeacher = data.UsernameTeacher,
+                PasswordTeacher = data.PasswordTeacher,
+                NameTeacher = data.NameTeacher,
+                StatusTeacher = data.StatusTeacher,
+                EmailTeacher = data.EmailTeacher,
+                Course = sss.ToArray()
+
+            };
+
+            DataTeacher.Remove(data);
+            DataTeacher.Add(item2);
+            //    data.Student.ToList().Add(item);
+            // var len = ss.Length;
+            // Array.Resize(ref ss, ss.Length + 1);
+            // var len = data.Student.Length;
+            // Array arr = new Array [len];
+            // Console.WriteLine(arr.Length);
+            // for (int i = 0; i < len; i++)
+            // {
+
+            //      Console.WriteLine(i);
+            // }
+            return item2;
+
         }
 
-        [HttpDelete("{id}")]
-        public void Delete_Teacher(string id)
-        {
-            var data = Data_Teacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-            Data_Teacher.Remove(data);
+        // [HttpPut("{id}")]
+        // public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
+        // {
 
-        }
+        //     var _id = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+
+        //     var item = new UserTeacher
+        //     {
+
+        //         UsernameTeacher = Teacher.UsernameTeacher,
+        //         PasswordTeacher = Teacher.PasswordTeacher,
+
+        //         IdTeacher = id.ToString(),
+        //         NameTeacher = Teacher.NameTeacher,
+        //         StatusTeacher = Teacher.StatusTeacher,
+        //         EmailTeacher = Teacher.EmailTeacher
+        //     };
+        //     DataTeacher.Remove(_id);
+        //     DataTeacher.Add(item);
+
+        //     return item;
+        // }
+
+
+        // [HttpDelete("{id}")]
+        // public void Delete_Teacher(string id)
+        // {
+        //     var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+        //     DataTeacher.Remove(data);
+
+        // }
 
 
 

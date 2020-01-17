@@ -13,12 +13,14 @@ export class CallapiService {
 
   public static host: string = "https://localhost:5001/api/";
 
+  idteaher:any;
+
   constructor(public http: HttpClient) { }
 
   // -------------------------------------------Teacher--------------------------------------------------
 
   public getAllData_Teaccher() {
-    return this.http.get<userTeacher>(CallapiService.host + 'Teacher/GetAllData_Teacher');
+    return this.http.get<userTeacher>(CallapiService.host + 'Teacher/GetAllDataTeacher');
   }
 
   public getById_Teaccher(id: string) {
@@ -37,6 +39,10 @@ export class CallapiService {
     return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Delete_Teacher/' + id);
   }
 
+  public AddCourseToTeacher(id: string, data) {
+    return this.http.put<opencourse>(CallapiService.host + 'Teacher/AddCourseToTeacher/' + id, data);
+  }
+  
 
 
   // -----------------------------------------Student-----------------------------------------------------------------
