@@ -18,12 +18,18 @@ namespace allApi.Controllers
 
     public class TeacherController : ControllerBase
     {
-        
+        public static List<UserStudent> DataStudent = new List<UserStudent>
+        {
+
+            new UserStudent { UsernameStudent = "ABCD" , PasswordStudent = "1111", IdStudent = "001", NameStudent ="ดำรง หอมจัง", StatusStudent = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th" },
+            new UserStudent { UsernameStudent = "ABCE" , PasswordStudent = "2222", IdStudent = "002", NameStudent ="เหล้าขาว จุบุ", StatusStudent = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th" }
+        };
+
         public static List<Course> CourseData = new List<Course>
      {
 
-        new Course { IdCourse = "12345", NameCourse = "Test" },
-        new Course { IdCourse = "Name222", NameCourse = "Tee214554684684" }
+        new Course {  DataStudents = DataStudent.ToArray()},
+        new Course {  DataStudents = DataStudent.ToArray()}
 
 
     };

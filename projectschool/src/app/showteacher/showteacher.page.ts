@@ -31,6 +31,7 @@ export class ShowteacherPage implements OnInit {
   asd;
   showteachercourse :any;
   showcourseteacher:string [] = [];
+ 
 a;
   datax = {
     "idCourse":null,
@@ -69,8 +70,11 @@ a;
     this.getTeacherById();
     console.log(this.getdatateacher);
     this.getCourse();
+ 
     // this.allshowcourse();
   }
+
+
 
   getTeacherById() {
     this.callapi.getById_Teaccher(this.idDatateacher).subscribe(it => {

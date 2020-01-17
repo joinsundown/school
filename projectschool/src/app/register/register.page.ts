@@ -58,7 +58,7 @@ a:string;
   add_Teacher() {
     this.callapi.add_Teaccher(this.teacherData.value).subscribe(it => {
     });
-    this.router.navigate(['/teacher']);
+    this.router.navigate(['/login']);
 
   }
 

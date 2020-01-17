@@ -10,6 +10,8 @@ namespace allApi.Models{
 
         public string NameCourse { get; set; }
 
+        public UserStudent[] DataStudents { get; set;}
+
         
 
 

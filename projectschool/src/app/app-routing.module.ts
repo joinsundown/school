@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'opencourse',
     loadChildren: () => import('./opencourse/opencourse.module').then( m => m.OpencoursePageModule)
+  },
+  {
+    path: 'detailcourseteacher',
+    loadChildren: () => import('./detailcourseteacher/detailcourseteacher.module').then( m => m.DetailcourseteacherPageModule)
   }
 
 
