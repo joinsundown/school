@@ -140,8 +140,17 @@ a;
 
   addopenCourse(data){
     this.callapi.add_OpenCourse(data).subscribe(data => {
-      console.log(data);    })
+      console.log(data);   
+     });
   }
+
+
+  getByIdStudent(id) {
+    this.callapi.getById_Student(id).subscribe(it => {
+      console.log(it);
+      // console.log(this.showDatastudent.idStudent);
+      
+    });
 
   // allshowcourse(){
   //   this.callapi.getAllData_OpenCourse().subscribe(it => {
@@ -154,3 +163,4 @@ a;
 }
 
 
+}
