@@ -64,7 +64,7 @@ export class ShowstudentPage implements OnInit {
       console.log(it);
       // console.log(this.showDatastudent.idStudent);
       
-      
+      this.router.navigate(['/detailcourseteacher']);
     });
     
   }

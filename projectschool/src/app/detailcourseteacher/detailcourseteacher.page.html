@@ -14,14 +14,10 @@
       <ion-col><label>รหัสวิชา</label></ion-col>
       <ion-col><label>ชื่อวิชา</label></ion-col>
     </ion-row>
-      <ion-row *ngFor ='let s of  a' text-center>
-        <ion-col><label>{{s.idCourse}}</label></ion-col>
-        <ion-col><label>{{s.nameCourse}}</label></ion-col>
+      <ion-row *ngFor ='let c of getdataAllteacher;' text-center>
+        <ion-col><label>{{c.idCourse}}</label></ion-col>
+        <ion-col><label>{{c.nameCourse}}</label></ion-col>
       </ion-row>
-
-
-
-    
 
   </ion-card>
 

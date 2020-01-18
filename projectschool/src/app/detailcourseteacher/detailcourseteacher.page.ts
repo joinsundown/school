@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userTeacher } from 'src/models/userTeacher';
 import { CallapiService } from '../callapi.service';
 import { Router } from '@angular/router';
+import { course } from 'src/models/course';
 
 @Component({
   selector: 'app-detailcourseteacher',
@@ -10,34 +11,24 @@ import { Router } from '@angular/router';
 })
 export class DetailcourseteacherPage implements OnInit {
 
-  
-  showDatateacher: userTeacher;
-  idDatateacher: any;
-  showcourseteacher:string [] = [];
-  a;
-  
+  getAll : userTeacher;
 
   constructor(public callapi :CallapiService,public router:Router) { }
 
   ngOnInit() {
-
    
   }
-  getTeacherById(id) {
-    this.callapi.getById_Teaccher(id).subscribe(it => {
-      console.log(it);
-      this.showDatateacher = it;
-      // for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
-      //   this.showcourseteacher[index] = this.showDatateacher.course[index];
-      //   console.log(this.showcourseteacher[index]);
-      //   this.a = this.showcourseteacher;
-      //   console.log(this.a);
-        
-      // }
-        this.router.navigate(['/detailcourseteacher',{_data:id}]);
-
-    });
+  getAlldatacourseTeacher(id){
+    this.callapi.getById_Teaccher(id).subscribe(it =>{
+      this.getAll = it;
+      console.log(this.getAll);
+      
+      
+    })
 
   }
+
+ 
+
 
 }
