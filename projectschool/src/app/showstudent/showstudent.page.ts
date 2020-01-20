@@ -40,7 +40,7 @@ export class ShowstudentPage implements OnInit {
     
   }
   getAllData() {
-    this.callapi.getAllData_Teaccher().subscribe(data => {
+    this.callapi.getAllData_Teacher().subscribe(data => {
       this.getdataAllteacher = data;
       console.log(this.getdataAllteacher);
 
@@ -60,7 +60,7 @@ export class ShowstudentPage implements OnInit {
   }
 
   getTeacherById(id) {
-    this.callapi.getById_Teaccher(id).subscribe(it => {
+    this.callapi.getById_Teacher(id).subscribe(it => {
       console.log(it);
       // console.log(this.showDatastudent.idStudent);
       

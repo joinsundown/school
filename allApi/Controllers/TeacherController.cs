@@ -129,41 +129,37 @@ namespace allApi.Controllers
 
         }
 
-        // [HttpPut("{id}")]
-        // public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
-        // {
+        [HttpPut("{id}")]
+        public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)
+        {
 
-        //     var _id = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            var _id = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
 
-        //     var item = new UserTeacher
-        //     {
+            var item = new UserTeacher
+            {
 
-        //         UsernameTeacher = Teacher.UsernameTeacher,
-        //         PasswordTeacher = Teacher.PasswordTeacher,
+                UsernameTeacher = Teacher.UsernameTeacher,
+                PasswordTeacher = Teacher.PasswordTeacher,
 
-        //         IdTeacher = id.ToString(),
-        //         NameTeacher = Teacher.NameTeacher,
-        //         StatusTeacher = Teacher.StatusTeacher,
-        //         EmailTeacher = Teacher.EmailTeacher
-        //     };
-        //     DataTeacher.Remove(_id);
-        //     DataTeacher.Add(item);
-
-        //     return item;
-        // }
-
-
-        // [HttpDelete("{id}")]
-        // public void Delete_Teacher(string id)
-        // {
-        //     var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-        //     DataTeacher.Remove(data);
-
-        // }
+                IdTeacher = id.ToString(),
+                NameTeacher = Teacher.NameTeacher,
+                StatusTeacher = Teacher.StatusTeacher,
+                EmailTeacher = Teacher.EmailTeacher
+            };
+            DataTeacher.Remove(_id);
+            DataTeacher.Add(item);
+            return item;
+        }
 
 
+        [HttpDelete("{id}")]
+        public void Delete_Teacher(string id)
+        {
+            var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            DataTeacher.Remove(data);
+
+        }
 
     }
-
 }
 

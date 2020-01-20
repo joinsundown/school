@@ -22,21 +22,24 @@ export class TeacherPage implements OnInit {
   }
 
   getAllData() {
-    this.callapi.getAllData_Teaccher().subscribe(data => {
+    this.callapi.getAllData_Teacher().subscribe(data => {
       this.getdataAllteacher = data;
       console.log(this.getdataAllteacher);
 
     });
   }
 
-  delete_Teaccher(id) {
-    this.callapi.delete_Teaccher(id).subscribe(data => {
+  delete_Teacher(id) {
+    
+    this.callapi.delete_Teacher(id).subscribe(data => {
       this.getAllData();
     });
 
   }
-  edit_Teaccher(data) {
-    console.log(data);
-    this.router.navigate(['/updateteacher', { _data: data }]);
+  edit_Teacher(id) {
+    console.log(id);
+    
+  
+    this.router.navigate(['/updateteacher', { _id: id }]);
   }
 }

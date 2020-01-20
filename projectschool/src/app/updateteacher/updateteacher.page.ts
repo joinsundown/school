@@ -16,7 +16,7 @@ export class UpdateteacherPage implements OnInit {
   all_DataTeacher: FormGroup;
 
   constructor(public activate: ActivatedRoute, public callapi: CallapiService, public formbuilder: FormBuilder, public router: Router) {
-    this.id_dataTeacher = this.activate.snapshot.paramMap.get('_data');
+    this.id_dataTeacher = this.activate.snapshot.paramMap.get('_id');
     console.log(this.id_dataTeacher);
     this.all_DataTeacher = this.formbuilder.group({
       'usernameTeacher': [null, Validators.required],
@@ -34,7 +34,7 @@ export class UpdateteacherPage implements OnInit {
   }
 
   getById_Teaccher() {
-    this.callapi.getById_Teaccher(this.id_dataTeacher).subscribe(it => {
+    this.callapi.getById_Teacher(this.id_dataTeacher).subscribe(it => {
       console.log(it);
       this.all_DataTeacher.patchValue(it)
       console.log(this.all_DataTeacher.value);
@@ -44,7 +44,7 @@ export class UpdateteacherPage implements OnInit {
   edit_Teaccher() {
     this.update_Teacher = this.all_DataTeacher.value;
     console.log(this.update_Teacher);
-    this.callapi.edit_Teaccher(this.id_dataTeacher, this.update_Teacher).subscribe(it => {
+    this.callapi.edit_Teacher(this.id_dataTeacher, this.update_Teacher).subscribe(it => {
     });
   }
 

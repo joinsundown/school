@@ -24,7 +24,7 @@ export class DetailcourseteacherPage implements OnInit {
    
   }
   getTeacherById(id) {
-    this.callapi.getById_Teaccher(id).subscribe(it => {
+    this.callapi.getById_Teacher(id).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
       // for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {

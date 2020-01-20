@@ -77,7 +77,7 @@ a;
 
 
   getTeacherById() {
-    this.callapi.getById_Teaccher(this.idDatateacher).subscribe(it => {
+    this.callapi.getById_Teacher(this.idDatateacher).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
       for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
