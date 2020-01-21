@@ -17,18 +17,29 @@ namespace allApi.Controllers
     public class StudentController : ControllerBase
     {
 
-        public static List<UserStudent> Data_Student = new List<UserStudent>
+
+        public static List<UserStudent> DataStudent = new List<UserStudent>
         {
 
             new UserStudent { UsernameStudent = "ABCD" , PasswordStudent = "1111", IdStudent = "001", NameStudent ="ดำรง หอมจัง", StatusStudent = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th" },
             new UserStudent { UsernameStudent = "ABCE" , PasswordStudent = "2222", IdStudent = "002", NameStudent ="เหล้าขาว จุบุ", StatusStudent = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th" }
         };
+        public static List<Course> CourseData = new List<Course>
+     {
+
+        new Course { IdCourse = "001", NameCourse = "Abc" , Students = DataStudent.ToArray()},
+        new Course { IdCourse = "002", NameCourse = "ssssss" , Students = DataStudent.ToArray()}
+
+
+    };
+
+
 
 
         [HttpGet]
         public ActionResult<IEnumerable<UserStudent>> GetAllData_Student()
         {
-            return Data_Student.ToList();
+            return DataStudent.ToList();
 
         }
 
@@ -36,7 +47,7 @@ namespace allApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<UserStudent> GetById_Student(string id)
         {
-            return Data_Student.FirstOrDefault(it => it.IdStudent == id.ToString());
+            return DataStudent.FirstOrDefault(it => it.IdStudent == id.ToString());
         }
 
 
@@ -56,9 +67,11 @@ namespace allApi.Controllers
                 IdStudent = Student.IdStudent,
                 NameStudent = Student.NameStudent,
                 StatusStudent = Student.StatusStudent,
-                EmailStudent = Student.EmailStudent
+                EmailStudent = Student.EmailStudent,
+
+                Course = CourseData.ToArray()
             };
-            Data_Student.Add(item);
+            DataStudent.Add(item);
             return item;
         }
 
@@ -67,7 +80,7 @@ namespace allApi.Controllers
         public UserStudent Edit_Student(string id, [FromBody] UserStudent Student)
         {
 
-            var _id = Data_Student.FirstOrDefault(it => it.IdStudent == id.ToString());
+            var _id = DataStudent.FirstOrDefault(it => it.IdStudent == id.ToString());
 
             var item = new UserStudent
             {
@@ -80,8 +93,8 @@ namespace allApi.Controllers
                 StatusStudent = Student.StatusStudent,
                 EmailStudent = Student.EmailStudent
             };
-            Data_Student.Remove(_id);
-            Data_Student.Add(item);
+            DataStudent.Remove(_id);
+            DataStudent.Add(item);
 
             return item;
         }
@@ -90,13 +103,32 @@ namespace allApi.Controllers
         [HttpDelete("{id}")]
         public void Delete_Student(string id)
         {
-            var data = Data_Student.FirstOrDefault(it => it.IdStudent == id.ToString());
-            Data_Student.Remove(data);
+            var data = DataStudent.FirstOrDefault(it => it.IdStudent == id.ToString());
+            DataStudent.Remove(data);
 
         }
 
 
+      
+        //     //    data.Student.ToList().Add(item);
+        //     // var len = ss.Length;
+        //     // Array.Resize(ref ss, ss.Length + 1);
+        //     // var len = data.Student.Length;
+        //     // Array arr = new Array [len];
+        //     // Console.WriteLine(arr.Length);
+        //     // for (int i = 0; i < len; i++)
+        //     // {
+
+        //     //      Console.WriteLine(i);
+        //     // }
+        //     return item2;
+
+        // }
+
     }
+
+
+
 
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { userTeacher } from 'src/models/userTeacher';
 import { CallapiService } from '../callapi.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { course } from 'src/models/course';
 
 @Component({
@@ -12,23 +12,43 @@ import { course } from 'src/models/course';
 export class DetailcourseteacherPage implements OnInit {
 
   getAll : userTeacher;
+  idt:any;
+  datat:any;
 
-  constructor(public callapi :CallapiService,public router:Router) { }
+
+  constructor(public callapi :CallapiService,public router:Router,public activate:ActivatedRoute) { 
+
+    this.idt = this.activate.snapshot.paramMap.get('idt');
+    console.log(this.idt);
+    this.getAlldatacourseTeacher();
+    
+   
+    
+  }
+
 
   ngOnInit() {
+
    
   }
-  getAlldatacourseTeacher(id){
-    this.callapi.getById_Teaccher(id).subscribe(it =>{
+  getAlldatacourseTeacher(){
+    this.callapi.getById_Teaccher(this.idt).subscribe(it =>{
       this.getAll = it;
-      console.log(this.getAll);
+      console.log(this.getAll.course);
+
+      this.datat = this.getAll.course;
+
       
       
     })
 
   }
 
+  
+  }
+
+  
  
 
 
-}
+

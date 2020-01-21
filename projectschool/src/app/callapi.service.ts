@@ -91,6 +91,13 @@ public delete_Course(id: string) {
   return this.http.delete<course>(CallapiService.host + 'Course/Delete_Course/' + id);
 }
 
+
+public courseInStudent(id: string ,data){
+  return this.http.put<course>(CallapiService.host + 'Course/CourseInStudent/' + id, data);
+}
+
+
+
 //----------------------------------------------opencourse-----------------------------------------------------
 
 public getAllData_OpenCourse() {

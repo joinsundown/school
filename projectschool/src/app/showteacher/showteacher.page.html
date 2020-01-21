@@ -30,8 +30,7 @@
           <label class="item item-input item-select">
             <div class="input-label"></div>
             <ion-select placeholder="เลือกวิชา" formControlName="id_Course" [(ngModel)]="data" (ionChange)="chang(data)">
-              <ion-select-option *ngFor="let s of showCourse" value="{{ s.idCourse  }}">{{ s.nameCourse }}
-              </ion-select-option>
+              <ion-select-option *ngFor="let s of showCourse" value="{{ s.idCourse  }}">{{ s.nameCourse }}</ion-select-option>
             </ion-select>
           </label>
         </ion-col>

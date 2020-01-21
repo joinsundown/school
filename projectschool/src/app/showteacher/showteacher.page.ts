@@ -23,21 +23,21 @@ export class ShowteacherPage implements OnInit {
   addcourseTeacher: course;
   courseData: FormGroup;
   course: any;
-  addcourse: opencourse;
-  dataCourse:course[] = [];
-  dataCourse2:course[] = [];
+  // addcourse: opencourse;
+  dataCourse: course[] = [];
+  dataCourse2: course[] = [];
   opencourseData: FormGroup;
-  addopencourseData: opencourse;
+  // addopencourseData: opencourse;
   asd;
-  showteachercourse :any;
-  showcourseteacher:string [] = [];
- 
-a;
+  showteachercourse: any;
+  showcourseteacher: string[] = [];
+  a;
+
   datax = {
-    "idCourse":null,
-    "nameCourse":null,
-    "student":null,
-    "teacher":null
+    "idCourse": null,
+    "nameCourse": null,
+    "student": null,
+    "teacher": null
   };
 
 
@@ -45,10 +45,10 @@ a;
     this.idDatateacher = this.activate.snapshot.paramMap.get('_data');
     console.log(this.idDatateacher);
     this.datax = {
-      "idCourse":'',
-      "nameCourse":'',
-      "student":null,
-      "teacher":null
+      "idCourse": '',
+      "nameCourse": '',
+      "student": null,
+      "teacher": null
     };
 
     this.getdatateacher = this.formbuilder.group({
@@ -70,7 +70,7 @@ a;
     this.getTeacherById();
     console.log(this.getdatateacher);
     this.getCourse();
- 
+
     // this.allshowcourse();
   }
 
@@ -85,9 +85,9 @@ a;
         console.log(this.showcourseteacher[index]);
         this.a = this.showcourseteacher;
         console.log(this.a);
-        
+
       }
-      
+
 
     });
 
@@ -97,40 +97,32 @@ a;
       console.log(it);
       this.showCourse = it;
       console.log(this.showCourse);
-      
+
       for (let index = 0; index < Object.keys(this.showCourse).length; index++) {
-          this.dataCourse[index] = this.showCourse[index];        
+        this.dataCourse[index] = this.showCourse[index];
       }
     });
     console.log(this.dataCourse);
-   
-    
-    
+
+
+
   }
   AddCourseTeacher() {
 
     console.log(this.showCourse);
     console.log(this.courseData.value.id_Course);
-    
+
     var filter = this.dataCourse.find(it => it.idCourse == this.courseData.value.id_Course);
     console.log(filter);
     this.datax.idCourse = filter.idCourse;
     this.datax.nameCourse = filter.nameCourse;
-    console.log(this.datax);
+    // console.log(this.datax);
 
-    this.callapi.AddCourseToTeacher(this.idDatateacher, this.datax).subscribe(it =>{
+    this.callapi.AddCourseToTeacher(this.idDatateacher, this.datax).subscribe(it => {
       console.log(it);
     });
 
-    // console.log(this.courseData.value.id_Course);
-    // this.course = this.courseData.value.id_Course
-    // // console.log(this.course);
-    // this.callapi.getById_Course(this.course).subscribe(it => {
-    //   console.log(it);
-    //   this.asd = it;
-    //  this.addopenCourse(this.asd);
-
-    // });
+  
 
   }
   chang(s) {
@@ -138,19 +130,12 @@ a;
 
   }
 
-  addopenCourse(data){
-    this.callapi.add_OpenCourse(data).subscribe(data => {
-      console.log(data);    })
-  }
-
-  // allshowcourse(){
-  //   this.callapi.getAllData_OpenCourse().subscribe(it => {
-  //     console.log(it);
-  //     this.showteachercourse = it;
-      
+  // addopenCourse(data) {
+  //   this.callapi.add_OpenCourse(data).subscribe(data => {
+  //     console.log(data);
   //   })
-    
   // }
+
 }
 
 

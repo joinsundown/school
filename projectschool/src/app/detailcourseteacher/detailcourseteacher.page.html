@@ -13,12 +13,16 @@
 
       <ion-col><label>รหัสวิชา</label></ion-col>
       <ion-col><label>ชื่อวิชา</label></ion-col>
-    </ion-row>
-      <ion-row *ngFor ='let c of getdataAllteacher;' text-center>
-        <ion-col><label>{{c.idCourse}}</label></ion-col>
-        <ion-col><label>{{c.nameCourse}}</label></ion-col>
-      </ion-row>
+      <ion-col><label>เพิ่มวิชาเรียน</label></ion-col> 
 
-  </ion-card>
+    </ion-row>
+      <ion-row *ngFor="let t of datat" text-center>
+        <ion-col><label>{{t.idCourse}}</label></ion-col>
+        <ion-col><label>{{t.nameCourse}}</label></ion-col>
+        <ion-col><ion-button (click)="getCoursebyId (t.idCourse)" >เพิ่มวิชาเรียน</ion-button></ion-col>
+      </ion-row>
+     
+    </ion-card>
 
 </ion-content>
+ 

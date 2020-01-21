@@ -13,16 +13,16 @@ import { userTeacher } from 'src/models/userTeacher';
 export class ShowstudentPage implements OnInit {
 
   idDatastudent: any;
-  showDatastudent : userStudent;
+  showDatastudent: userStudent;
   getdatastudent: FormGroup;
   getdataAllteacher: userTeacher;
 
 
-  
+
   constructor(public callapi: CallapiService, public activate: ActivatedRoute, public router: Router, public formbuilder: FormBuilder) {
     this.idDatastudent = this.activate.snapshot.paramMap.get('_data');
     console.log(this.idDatastudent);
-    
+
     this.getdatastudent = this.formbuilder.group({
       'idStudent': [null, Validators.required],
       'nameStudent': [null, Validators.required],
@@ -35,9 +35,8 @@ export class ShowstudentPage implements OnInit {
 
   ngOnInit() {
     this.getStudentById();
-    console.log(this.getdatastudent.value);
     this.getAllData();
-    
+
   }
   getAllData() {
     this.callapi.getAllData_Teaccher().subscribe(data => {
@@ -53,23 +52,16 @@ export class ShowstudentPage implements OnInit {
       console.log(it);
       this.showDatastudent = it;
       // console.log(this.showDatastudent.idStudent);
-      
-      
+
+
     });
-    
+
   }
 
   getTeacherById(id) {
-    this.callapi.getById_Teaccher(id).subscribe(it => {
-      console.log(it);
-      // console.log(this.showDatastudent.idStudent);
-      
-      this.router.navigate(['/detailcourseteacher']);
-    });
-    
+    this.router.navigate(['/detailcourseteacher', { idt: id }]);
   }
 
-
-  }
+}
 
 

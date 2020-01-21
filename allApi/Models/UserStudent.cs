@@ -17,10 +17,9 @@ namespace allApi.Models
 
         public string EmailStudent { get; set; }
 
+          public Course[] Course { get; set; }
 
 
-        public string Score_Mid { get; set; }
-        public string Score_Final { get; set; }
-        public string Coruse_Grade { get; set; }
+
     }
 }

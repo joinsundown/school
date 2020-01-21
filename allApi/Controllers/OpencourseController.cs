@@ -21,9 +21,9 @@ namespace allApi.Controllers
         public static List<UserStudent> Students = new List<UserStudent>
      {
 
-        new UserStudent { IdStudent = "NameNa", NameStudent = "Test" , Score_Mid =" 49" , Score_Final = "34", Coruse_Grade = "D"},
+        new UserStudent { IdStudent = "IdStudent1", NameStudent = "Student1"  },
 
-        new UserStudent { IdStudent = "Name222", NameStudent = "Tee214554684684" , Score_Mid =" 33" , Score_Final = "68", Coruse_Grade = "C"}
+        new UserStudent { IdStudent = "IdStudent2", NameStudent = "Student2" }
 
 
     };
@@ -31,9 +31,9 @@ namespace allApi.Controllers
         public static List<UserTeacher> Teachers = new List<UserTeacher>
      {
 
-        new UserTeacher { IdTeacher = "NameNa", NameTeacher = "Test" , StatusTeacher ="XXX" , EmailTeacher = "XXX@mail.com"},
+        new UserTeacher { IdTeacher = "Name01", NameTeacher = "Test1" , StatusTeacher ="ST1" , EmailTeacher = "AAA@mail.com"},
 
-        new UserTeacher { IdTeacher = "Name222", NameTeacher = "Tee214554684684" , StatusTeacher =" XXXXX" , EmailTeacher = "XXXXXX@mail.com"}
+        new UserTeacher { IdTeacher = "Name02", NameTeacher = "Tee2" , StatusTeacher =" ST2" , EmailTeacher = "BBB@mail.com"}
 
 
     };
@@ -41,9 +41,9 @@ namespace allApi.Controllers
         public static List<Course> CourseData = new List<Course>
      {
 
-        new Course { IdCourse = "12345", NameCourse = "Test" },
+        new Course { IdCourse = "0101", NameCourse = "course1" },
 
-        new Course { IdCourse = "Name222", NameCourse = "Tee214554684684" }
+        new Course { IdCourse = "0202", NameCourse = "course2" }
 
 
     };
@@ -51,7 +51,7 @@ namespace allApi.Controllers
         public static List<Opencourse> DataOpenCourse = new List<Opencourse>
      {
 
-        new Opencourse {IdCourse = "12345", NameCourse = "Test", Student = Students.ToArray() , Teacher = Teachers.ToArray() },
+        new Opencourse {IdCourse = "010111", NameCourse = "courses", Student = Students.ToArray() , Teacher = Teachers.ToArray() },
         
 
     };
@@ -87,9 +87,7 @@ namespace allApi.Controllers
                 NameStudent = Studentx.NameStudent,
                 StatusStudent = Studentx.StatusStudent,
                 EmailStudent = Studentx.EmailStudent,
-                Score_Mid = "0",
-                Score_Final = "0",
-                Coruse_Grade = "0",
+             
             };
             sss.Add(item);
             Console.WriteLine(sss.ToList());

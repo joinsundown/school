@@ -51,7 +51,7 @@ a:string;
     console.log(this.studentData.value);
     
     
-    this.router.navigate(['/student']);
+    this.router.navigate(['/login']);
 
   }
 

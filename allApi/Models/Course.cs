@@ -10,7 +10,7 @@ namespace allApi.Models{
 
         public string NameCourse { get; set; }
 
-        public UserStudent[] DataStudents { get; set;}
+        public UserStudent[] Students { get; set;}
 
         
 
