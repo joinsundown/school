@@ -59,13 +59,7 @@ export class ShowstudentPage implements OnInit {
   }
 
   getTeacherById(id) {
-    this.callapi.getById_Teacher(id).subscribe(it => {
-      console.log(it);
-      // console.log(this.showDatastudent.idStudent);
-      
-      
-    });
-    
+    this.router.navigate(['/detailcourseteacher', { idt: id }]);
   }
 
 }
