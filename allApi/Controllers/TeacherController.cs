@@ -66,7 +66,7 @@ namespace allApi.Controllers
 
             var item = new UserTeacher
             {
-            
+
                 UsernameTeacher = Teacher.UsernameTeacher,
                 PasswordTeacher = Teacher.PasswordTeacher,
 
@@ -81,19 +81,33 @@ namespace allApi.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public UserTeacher AddCourseToTeacher(string id, [FromBody] Course coure)
+        [HttpPut("{id}/{id2}")]
+        public UserTeacher AddCourseToTeacher(string id, string id2, [FromBody] UserStudent Student)
         {
-
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
             var sss = data.Course.ToList();
 
-         
+            var data2 = CourseData.FirstOrDefault(it => it.IdCourse == id2.ToString());
+            var ssss = data2.Students.ToList();
+
+            var item0 = new UserStudent
+            {
+                IdStudent = id.ToString(),
+                UsernameStudent = Student.UsernameStudent,
+                PasswordStudent = Student.PasswordStudent,
+                NameStudent = Student.NameStudent,
+                StatusStudent = Student.StatusStudent,
+                EmailStudent = Student.EmailStudent,
+            };
+
+            ssss.Add(item0);
+            Console.WriteLine(ssss.ToList());
+
             var item = new Course
             {
-   
-                IdCourse = coure.IdCourse,
-                NameCourse = coure.NameCourse
+                IdCourse = id2.ToString(),
+                NameCourse = data2.NameCourse,
+                Students = ssss.ToArray()
 
             };
             sss.Add(item);
@@ -113,12 +127,10 @@ namespace allApi.Controllers
 
             DataTeacher.Remove(data);
             DataTeacher.Add(item2);
-        
-       
             return item2;
-
         }
-    
+
+
 
         [HttpPut("{id}")]
         public UserTeacher Edit_Teacher(string id, [FromBody] UserTeacher Teacher)

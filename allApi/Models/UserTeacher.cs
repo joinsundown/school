@@ -14,6 +14,7 @@ namespace allApi.Models
         public string EmailTeacher { get; set; }
 
          public Course[] Course { get; set; }
+         public UserStudent[] Students { get; set;}
    
     }
 }
