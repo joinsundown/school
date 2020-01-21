@@ -27,16 +27,17 @@
     <ion-row *ngFor='let data of getdataAllteacher;let i = index'>
       <ion-col><label>{{data.usernameTeacher}}</label></ion-col>
       <ion-col><label>{{data.passwordTeacher}}</label></ion-col>
+
       <ion-col><label>{{data.idTeacher}}</label></ion-col>
       <ion-col><label>{{data.nameTeacher}}</label></ion-col>
       <ion-col><label>{{data.statusTeacher}}</label></ion-col>
       <ion-col><label>{{data.emailTeacher}}</label></ion-col>
       <ion-col>
-        <ion-button color="primary" (click)="edit_Teaccher(data.usernameTeacher)"></ion-button>
+        <ion-button color="primary" (click)="edit_Teacher(data.idTeacher)"></ion-button>
       </ion-col>
 
       <ion-col>
-        <ion-button color="danger" (click)="delete_Teaccher(data.idTeacher)"></ion-button>
+        <ion-button color="danger" (click)="delete_Teacher(data.idTeacher)"></ion-button>
       </ion-col>
     </ion-row>
 

@@ -77,7 +77,7 @@ export class ShowteacherPage implements OnInit {
 
 
   getTeacherById() {
-    this.callapi.getById_Teaccher(this.idDatateacher).subscribe(it => {
+    this.callapi.getById_Teacher(this.idDatateacher).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
       for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
@@ -130,12 +130,29 @@ export class ShowteacherPage implements OnInit {
 
   }
 
-  // addopenCourse(data) {
-  //   this.callapi.add_OpenCourse(data).subscribe(data => {
-  //     console.log(data);
+  addopenCourse(data){
+    this.callapi.add_OpenCourse(data).subscribe(data => {
+      console.log(data);   
+     });
+  }
+
+
+  getByIdStudent(id) {
+    this.callapi.getById_Student(id).subscribe(it => {
+      console.log(it);
+      // console.log(this.showDatastudent.idStudent);
+      
+    });
+
+  // allshowcourse(){
+  //   this.callapi.getAllData_OpenCourse().subscribe(it => {
+  //     console.log(it);
+  //     this.showteachercourse = it;
+      
   //   })
   // }
 
 }
 
 
+}

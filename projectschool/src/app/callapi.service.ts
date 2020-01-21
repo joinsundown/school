@@ -19,23 +19,23 @@ export class CallapiService {
 
   // -------------------------------------------Teacher--------------------------------------------------
 
-  public getAllData_Teaccher() {
+  public getAllData_Teacher() {
     return this.http.get<userTeacher>(CallapiService.host + 'Teacher/GetAllDataTeacher');
   }
 
-  public getById_Teaccher(id: string) {
+  public getById_Teacher(id:string) {
     return this.http.get<userTeacher>(CallapiService.host + 'Teacher/GetById_Teacher/' + id);
   }
 
-  public add_Teaccher(data) {
+  public add_Teacher(data) {
     return this.http.post<userTeacher>(CallapiService.host + 'Teacher/AddUser_Teacher', data);
   }
 
-  public edit_Teaccher(id: string, data) {
+  public edit_Teacher(id: string, data) {
     return this.http.put<userTeacher>(CallapiService.host + 'Teacher/Edit_Teacher/' + id, data);
   }
 
-  public delete_Teaccher(id: string) {
+  public delete_Teacher(id: string) {
     return this.http.delete<userTeacher>(CallapiService.host + 'Teacher/Delete_Teacher/' + id);
   }
 

@@ -20,7 +20,7 @@ export class DetailcourseteacherPage implements OnInit {
 
     this.idt = this.activate.snapshot.paramMap.get('idt');
     console.log(this.idt);
-    this.getAlldatacourseTeacher();
+    // this.getAlldatacourseTeacher();
     
    
     
@@ -31,24 +31,20 @@ export class DetailcourseteacherPage implements OnInit {
 
    
   }
-  getAlldatacourseTeacher(){
-    this.callapi.getById_Teaccher(this.idt).subscribe(it =>{
-      this.getAll = it;
-      console.log(this.getAll.course);
+  getTeacherById(id) {
+    this.callapi.getById_Teacher(id).subscribe(it => {
+      console.log(it);
+      // this.showDatateacher = it;
+      // for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
+      //   this.showcourseteacher[index] = this.showDatateacher.course[index];
+      //   console.log(this.showcourseteacher[index]);
+      //   this.a = this.showcourseteacher;
+      //   console.log(this.a);
+        
+      // }
+        this.router.navigate(['/detailcourseteacher',{_data:id}]);
 
-      this.datat = this.getAll.course;
-
-      
-      
-    })
+    });
 
   }
-
-  
-  }
-
-  
- 
-
-
-
+}

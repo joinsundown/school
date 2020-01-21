@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
 
     })
 
-    this.callapi.getAllData_Teaccher().subscribe((Data) => {
+    this.callapi.getAllData_Teacher().subscribe((Data) => {
       this.DataT = Data;
       console.log(this.DataT);
 
