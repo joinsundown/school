@@ -28,8 +28,8 @@ namespace allApi.Controllers
         public static List<Course> CourseData = new List<Course>
      {
 
-        new Course { IdCourse = "001", NameCourse = "coursese1" , Students = DataStudent.ToArray()},
-        new Course { IdCourse = "002", NameCourse = "coursese2" , Students = DataStudent.ToArray()}
+        new Course { IdCourse = "111001", NameCourse = "coursese1" , Students = DataStudent.ToArray()},
+        new Course { IdCourse = "111002", NameCourse = "coursese2" , Students = DataStudent.ToArray()}
 
 
     };
@@ -37,9 +37,11 @@ namespace allApi.Controllers
         public static List<UserTeacher> DataTeacher = new List<UserTeacher>
      {
 
-        new UserTeacher {  UsernameTeacher = "teacher1", PasswordTeacher = "1111", IdTeacher = "0001", NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
-        new UserTeacher {  UsernameTeacher = "teacher2", PasswordTeacher = "2222", IdTeacher = "0002", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_xxxxxxx@hotmail.co.th",Course = CourseData.ToArray() },
-        new UserTeacher {  UsernameTeacher = "teacher3", PasswordTeacher = "3333", IdTeacher = "0003", NameTeacher ="Nameteacher3", StatusTeacher = "Teacher" ,EmailTeacher = "Timmy_Commfort@hotmail.co.th",Course = CourseData.ToArray() }
+        new UserTeacher {  UsernameTeacher = "teacher1", PasswordTeacher = "1111", IdTeacher = "1111", NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
+        // new UserTeacher {  UsernameTeacher = "teacher2", PasswordTeacher = "2222", IdTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
+        // new UserTeacher {  UsernameTeacher = "teacher3", PasswordTeacher = "3333", IdTeacher = "3333", NameTeacher ="Nameteacher3", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
+        // new UserTeacher {  UsernameTeacher = "teacher4", PasswordTeacher = "4444", IdTeacher = "4444", NameTeacher ="Nameteacher4", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() }
+
 
     };
 
@@ -159,8 +161,6 @@ namespace allApi.Controllers
         public UserTeacher AddStudentToCourse(string id, string id2, [FromBody] UserStudent Student)
         {
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-            var sss = data.Course.ToList();
-
             var data2 = CourseData.FirstOrDefault(it => it.IdCourse == id2.ToString());
             var ssss = data2.Students.ToList();
 
@@ -182,27 +182,28 @@ namespace allApi.Controllers
 
             var item = new Course
             {
-                IdCourse = id2.ToString(),
+                IdCourse = data2.IdCourse,
                 NameCourse = data2.NameCourse,
                 Students = ssss.ToArray()
 
             };
-            sss.Add(item);
-            Console.WriteLine(sss.ToList());
+            CourseData.Remove(data2);
+            CourseData.Add(item);
+            // Console.WriteLine(sss.ToList());
 
 
             var item2 = new UserTeacher
             {
-                IdTeacher = data.IdTeacher,
+                IdTeacher = id.ToString(),
                 UsernameTeacher = data.UsernameTeacher,
                 PasswordTeacher = data.PasswordTeacher,
                 NameTeacher = data.NameTeacher,
                 StatusTeacher = data.StatusTeacher,
                 EmailTeacher = data.EmailTeacher,
-                Course = sss.ToArray()
+                Course = CourseData.ToArray()
 
             };
-            DataTeacher.Remove(data);
+            // DataTeacher.Remove(data);
             DataTeacher.Add(item2);
             return item2;
         }
