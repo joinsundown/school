@@ -15,6 +15,8 @@ export class ShowstudentPage implements OnInit {
   idDatastudent: any;
   showDatastudent: userStudent;
   getdatastudent: FormGroup;
+  getdatateacher: FormGroup;
+  courseData: FormGroup;
   getdataAllteacher: userTeacher;
 
 
@@ -23,6 +25,19 @@ export class ShowstudentPage implements OnInit {
     this.idDatastudent = this.activate.snapshot.paramMap.get('_data');
     console.log(this.idDatastudent);
 
+
+    this.getdatateacher = this.formbuilder.group({
+      'idTeacher': [null, Validators.required],
+      'nameTeacher': [null, Validators.required],
+      'statusTeacher': [null, Validators.required],
+      'emailTeacher': [null, Validators.required]
+    });
+
+    this.courseData = this.formbuilder.group({
+      'id_Course': [null, Validators.required],
+      'name_Course': [null, Validators.required]
+
+    });
     this.getdatastudent = this.formbuilder.group({
       'idStudent': [null, Validators.required],
       'nameStudent': [null, Validators.required],
@@ -59,6 +74,9 @@ export class ShowstudentPage implements OnInit {
   }
 
   getTeacherById(id) {
+    this.callapi.idteaher = id;
+    console.log(this.callapi.idteaher);
+    
     this.router.navigate(['/detailcourseteacher', { idt: id }]);
   }
 

@@ -122,7 +122,7 @@ export class ShowteacherPage implements OnInit {
       console.log(it);
     });
 
-  
+
 
   }
   chang(s) {
@@ -130,10 +130,10 @@ export class ShowteacherPage implements OnInit {
 
   }
 
-  addopenCourse(data){
+  addopenCourse(data) {
     this.callapi.add_OpenCourse(data).subscribe(data => {
-      console.log(data);   
-     });
+      console.log(data);
+    });
   }
 
 
@@ -141,18 +141,17 @@ export class ShowteacherPage implements OnInit {
     this.callapi.getById_Student(id).subscribe(it => {
       console.log(it);
       // console.log(this.showDatastudent.idStudent);
-      
+
     });
 
-  // allshowcourse(){
-  //   this.callapi.getAllData_OpenCourse().subscribe(it => {
-  //     console.log(it);
-  //     this.showteachercourse = it;
-      
-  //   })
-  // }
+    // allshowcourse(){
+    //   this.callapi.getAllData_OpenCourse().subscribe(it => {
+    //     console.log(it);
+    //     this.showteachercourse = it;
 
-}
+    //   })
+    // }
 
+  }
 
 }

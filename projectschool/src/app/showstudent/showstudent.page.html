@@ -8,8 +8,8 @@
 
 
   <ion-card>
+    <h1>ข้อมูล</h1>
     <ion-row text-center>
-
       <ion-col><label>Id</label></ion-col>
       <ion-col><label>Name</label></ion-col>
       <ion-col><label>Status</label></ion-col>
@@ -32,13 +32,37 @@
       </ion-col> -->
     </ion-row>
 
-
-
-
   </ion-card>
 
   <ion-card>
+    <h1>รายวิชาที่ลงทะเบียน</h1>
+    <ion-row text-center>
+      <ion-col><label>อาจารย์ผู้สอน</label></ion-col>
 
+      <ion-col><label>รายวิชาที่ลงทะเบียน</label></ion-col>
+      <ion-col><label>รหัสวิชา</label></ion-col>
+
+      <ion-col><label>SCORE MID</label></ion-col>
+      <ion-col><label>SCORE FINAL</label></ion-col>
+      <ion-col><label>SCORE ALL</label></ion-col>
+      <ion-col><label>GRADE</label></ion-col>
+    </ion-row>
+
+    <ion-row text-center>
+      <ion-col><label>Nameteacher1</label></ion-col>
+
+      <ion-col><label>coursese1</label></ion-col>
+      <ion-col><label>001</label></ion-col>
+
+      <ion-col><label> 0 </label></ion-col>
+      <ion-col><label> 0 </label></ion-col>
+      <ion-col><label> 0 </label></ion-col>
+      <ion-col><label> F </label></ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <h1>เลือกอาจารย์ผู้สอน</h1>
     <ion-row text-center>
 
       <ion-col><label>อาจารย์ผู้สอน</label></ion-col>
@@ -48,9 +72,11 @@
     <ion-row *ngFor='let t of getdataAllteacher;let i = index' text-center>
       <ion-col><label>{{t.nameTeacher}}</label></ion-col>
       <ion-col>
-        <ion-button (click)="getTeacherById(t.idTeacher)">ดูวิชาที่เปิดสอน</ion-button>
+        <ion-button color="dark" (click)="getTeacherById(t.idTeacher)">ดูวิชาที่เปิดสอน</ion-button>
       </ion-col>
     </ion-row>
-   
+
   </ion-card>
+
+
 </ion-content>

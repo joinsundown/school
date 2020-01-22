@@ -13,7 +13,11 @@ export class CallapiService {
 
   public static host: string = "https://localhost:5001/api/";
 
+  idstudnet:any;
   idteaher:any;
+  idcourse:any;
+
+
 
   constructor(public http: HttpClient) { }
 
@@ -40,7 +44,10 @@ export class CallapiService {
   }
 
   public AddCourseToTeacher(id: string, data) {
-    return this.http.put<opencourse>(CallapiService.host + 'Teacher/AddCourseToTeacher/' + id, data);
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/AddCourseToTeacher/' + id, data);
+  }
+  public AddStudentToCourse(id: string,id2: string, data) {
+    return this.http.put<userTeacher>(CallapiService.host + 'Teacher/AddStudentToCourse/'+ id+ '/' +id2 +'/',data);
   }
   
 

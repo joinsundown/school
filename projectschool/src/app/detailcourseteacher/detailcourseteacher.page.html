@@ -19,7 +19,7 @@
       <ion-row *ngFor="let t of datat" text-center>
         <ion-col><label>{{t.idCourse}}</label></ion-col>
         <ion-col><label>{{t.nameCourse}}</label></ion-col>
-        <ion-col><ion-button  >เพิ่มวิชาเรียน</ion-button></ion-col>
+        <ion-col><ion-button  color="dark" (click)='AddStudentToCourse(t.idCourse)'>เพิ่มวิชาเรียน</ion-button></ion-col>
       </ion-row>
      
     </ion-card>
