@@ -21,8 +21,8 @@ namespace allApi.Controllers
         public static List<UserStudent> DataStudent = new List<UserStudent>
         {
 
-            new UserStudent { UsernameStudent = "ABCD" , PasswordStudent = "1111", IdStudent = "001", NameStudent ="ดำรง หอมจัง", StatusStudent = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th" },
-            new UserStudent { UsernameStudent = "ABCE" , PasswordStudent = "2222", IdStudent = "002", NameStudent ="เหล้าขาว จุบุ", StatusStudent = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th" }
+            new UserStudent { UsernameStudent = "ABCD" , PasswordStudent = "1111", IdStudent = "001", NameStudent ="ดำรง หอมจัง", StatusStudent = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th",Score_Mid ="30", Score_Final = "50", Grade ="B" },
+            new UserStudent { UsernameStudent = "ABCE" , PasswordStudent = "2222", IdStudent = "002", NameStudent ="เหล้าขาว จุบุ", StatusStudent = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th",Score_Mid ="50", Score_Final = "50", Grade ="A" }
         };
         public static List<Course> CourseData = new List<Course>
      {
@@ -109,7 +109,7 @@ namespace allApi.Controllers
         }
 
 
-      
+
         //     //    data.Student.ToList().Add(item);
         //     // var len = ss.Length;
         //     // Array.Resize(ref ss, ss.Length + 1);
