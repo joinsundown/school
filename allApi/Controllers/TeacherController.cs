@@ -43,8 +43,6 @@ namespace allApi.Controllers
 
     };
 
-
-
         [HttpGet]
         public ActionResult<IEnumerable<UserTeacher>> GetAllDataTeacher()
         {
@@ -52,13 +50,11 @@ namespace allApi.Controllers
 
         }
 
-
         [HttpGet("{id}")]
         public ActionResult<UserTeacher> GetById_Teacher(string id)
         {
             return DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
         }
-
 
         [HttpPost]
         public UserTeacher AddUser_Teacher([FromBody] UserTeacher Teacher)
@@ -74,67 +70,12 @@ namespace allApi.Controllers
                 NameTeacher = Teacher.NameTeacher,
                 StatusTeacher = Teacher.StatusTeacher,
                 EmailTeacher = Teacher.EmailTeacher,
-                
+
                 Course = CourseData.ToArray()
             };
             DataTeacher.Add(item);
             return item;
         }
-
-
-        [HttpPut("{id}/{id2}")]
-        public UserTeacher AddCourseToTeacher(string id, string id2, [FromBody] UserStudent Student)
-        {
-            var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-            var sss = data.Course.ToList();
-
-            var data2 = CourseData.FirstOrDefault(it => it.IdCourse == id2.ToString());
-            var ssss = data2.Students.ToList();
-
-            var item0 = new UserStudent
-            {
-                IdStudent = id.ToString(),
-                UsernameStudent = Student.UsernameStudent,
-                PasswordStudent = Student.PasswordStudent,
-                NameStudent = Student.NameStudent,
-                StatusStudent = Student.StatusStudent,
-                EmailStudent = Student.EmailStudent,
-                Score_Mid = Student.Score_Mid,
-                Score_Final = Student.Score_Final,
-                Grade = Student.Grade
-                
-            };
-
-            ssss.Add(item0);
-            Console.WriteLine(ssss.ToList());
-
-            var item = new Course
-            {
-                IdCourse = id2.ToString(),
-                NameCourse = data2.NameCourse,
-                Students = ssss.ToArray()
-
-            };
-            sss.Add(item);
-            Console.WriteLine(sss.ToList());
-
-            var item2 = new UserTeacher
-            {
-                IdTeacher = id.ToString(),
-                UsernameTeacher = data.UsernameTeacher,
-                PasswordTeacher = data.PasswordTeacher,
-                NameTeacher = data.NameTeacher,
-                StatusTeacher = data.StatusTeacher,
-                EmailTeacher = data.EmailTeacher,
-                Course = sss.ToArray()
-
-            };
-
-            DataTeacher.Remove(data);
-            DataTeacher.Add(item2);
-            return item2;
-        }
-
 
 
         [HttpPut("{id}")]
@@ -168,6 +109,104 @@ namespace allApi.Controllers
 
         }
 
+          [HttpPut("{id}")]
+        public UserTeacher AddCourseToTeacher(string id, [FromBody] Course coure)
+        {
+
+            var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            var sss = data.Course.ToList();
+
+            // var _id = Guid.NewGuid().ToString();
+            var item = new Course
+            {
+                // Id_Teacher = _id.ToString(),
+                IdCourse = coure.IdCourse,
+                NameCourse = coure.NameCourse
+
+            };
+            sss.Add(item);
+            Console.WriteLine(sss.ToList());
+
+            var item2 = new UserTeacher
+            {
+                IdTeacher = id.ToString(),
+                UsernameTeacher = data.UsernameTeacher,
+                PasswordTeacher = data.PasswordTeacher,
+                NameTeacher = data.NameTeacher,
+                StatusTeacher = data.StatusTeacher,
+                EmailTeacher = data.EmailTeacher,
+                Course = sss.ToArray()
+
+            };
+
+            DataTeacher.Remove(data);
+            DataTeacher.Add(item2);
+            //    data.Student.ToList().Add(item);
+            // var len = ss.Length;
+            // Array.Resize(ref ss, ss.Length + 1);
+            // var len = data.Student.Length;
+            // Array arr = new Array [len];
+            // Console.WriteLine(arr.Length);
+            // for (int i = 0; i < len; i++)
+            // {
+
+            //      Console.WriteLine(i);
+            // }
+            return item2;
+
+        }
+
+
+        [HttpPut("{id}/{id2}")]
+        public UserTeacher AddStudentToCouse(string id, string id2, [FromBody] UserStudent Student)
+        {
+            var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+            var sss = data.Course.ToList();
+
+            var data2 = CourseData.FirstOrDefault(it => it.IdCourse == id2.ToString());
+            var ssss = data2.Students.ToList();
+
+            var item0 = new UserStudent
+            {
+                IdStudent = Student.IdStudent,
+                UsernameStudent = Student.UsernameStudent,
+                PasswordStudent = Student.PasswordStudent,
+                NameStudent = Student.NameStudent,
+                StatusStudent = Student.StatusStudent,
+                EmailStudent = Student.EmailStudent,
+                Score_Mid = Student.Score_Mid,
+                Score_Final = Student.Score_Final,
+                Grade = Student.Grade
+            };
+
+            ssss.Add(item0);
+            Console.WriteLine(ssss.ToList());
+
+            var item = new Course
+            {
+                IdCourse = id2.ToString(),
+                NameCourse = data2.NameCourse,
+                Students = ssss.ToArray()
+
+            };
+            sss.Add(item);
+            Console.WriteLine(sss.ToList());
+
+            var item2 = new UserTeacher
+            {
+                IdTeacher = data.IdTeacher,
+                UsernameTeacher = data.UsernameTeacher,
+                PasswordTeacher = data.PasswordTeacher,
+                NameTeacher = data.NameTeacher,
+                StatusTeacher = data.StatusTeacher,
+                EmailTeacher = data.EmailTeacher,
+                Course = sss.ToArray()
+
+            };
+            DataTeacher.Remove(data);
+            DataTeacher.Add(item2);
+            return item2;
+        }
     }
 }
 
