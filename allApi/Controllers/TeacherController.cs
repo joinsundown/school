@@ -113,7 +113,7 @@ namespace allApi.Controllers
         public UserTeacher AddCourseToTeacher(string id, [FromBody] Course coure)
         {
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-            var sssx = data.Course.ToList();
+            var sss = data.Course.ToList();
 
             // var _id = Guid.NewGuid().ToString();
             var item = new Course
@@ -123,8 +123,8 @@ namespace allApi.Controllers
                 NameCourse = coure.NameCourse,
 
             };
-            sssx.Add(item);
-            Console.WriteLine(sssx.ToList());
+            sss.Add(item);
+            Console.WriteLine(sss.ToList());
 
             var item2 = new UserTeacher
             {
@@ -134,7 +134,7 @@ namespace allApi.Controllers
                 NameTeacher = data.NameTeacher,
                 StatusTeacher = data.StatusTeacher,
                 EmailTeacher = data.EmailTeacher,
-                Course = sssx.ToArray()
+                Course = sss.ToArray()
 
             };
 
