@@ -109,23 +109,22 @@ namespace allApi.Controllers
 
         }
 
-          [HttpPut("{id}")]
+        [HttpPut("{id}")]
         public UserTeacher AddCourseToTeacher(string id, [FromBody] Course coure)
         {
-
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
-            var sss = data.Course.ToList();
+            var sssx = data.Course.ToList();
 
             // var _id = Guid.NewGuid().ToString();
             var item = new Course
             {
                 // Id_Teacher = _id.ToString(),
                 IdCourse = coure.IdCourse,
-                NameCourse = coure.NameCourse
+                NameCourse = coure.NameCourse,
 
             };
-            sss.Add(item);
-            Console.WriteLine(sss.ToList());
+            sssx.Add(item);
+            Console.WriteLine(sssx.ToList());
 
             var item2 = new UserTeacher
             {
@@ -135,7 +134,7 @@ namespace allApi.Controllers
                 NameTeacher = data.NameTeacher,
                 StatusTeacher = data.StatusTeacher,
                 EmailTeacher = data.EmailTeacher,
-                Course = sss.ToArray()
+                Course = sssx.ToArray()
 
             };
 
@@ -153,12 +152,11 @@ namespace allApi.Controllers
             //      Console.WriteLine(i);
             // }
             return item2;
-
         }
 
 
         [HttpPut("{id}/{id2}")]
-        public UserTeacher AddStudentToCouse(string id, string id2, [FromBody] UserStudent Student)
+        public UserTeacher AddStudentToCourse(string id, string id2, [FromBody] UserStudent Student)
         {
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
             var sss = data.Course.ToList();
@@ -191,6 +189,7 @@ namespace allApi.Controllers
             };
             sss.Add(item);
             Console.WriteLine(sss.ToList());
+
 
             var item2 = new UserTeacher
             {

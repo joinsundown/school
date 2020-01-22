@@ -3,7 +3,6 @@ namespace allApi.Models
     public class UserStudent
     {
 
-
         public string IdStudent { get; set; }
         public string UsernameStudent { get; set; }
         public string PasswordStudent { get; set; }
@@ -17,7 +16,6 @@ namespace allApi.Models
         public string Score_Final { get; set; }
         public string Grade { get; set; }
         public Course[] Course { get; set; }
-
 
 
     }
