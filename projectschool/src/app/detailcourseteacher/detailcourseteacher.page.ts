@@ -46,7 +46,7 @@ export class DetailcourseteacherPage implements OnInit {
   }
   
   getStudentById() {
-    this.callapi.getById_Student(this.idt).subscribe(it => {
+    this.callapi.getById_Student(this.callapi.idstudnet).subscribe(it => {
       console.log(it);
       this.idt = it;
       // console.log(this.showDatastudent.idStudent);

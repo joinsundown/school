@@ -62,7 +62,10 @@ export class LoginPage implements OnInit {
 
 
         this.route.navigate(['/showstudent', { _data: this.DataS[og].idStudent }]);
+        this.callapi.idstudnet = this.DataS[og].idStudent;
 
+        console.log(this.callapi.idstudnet);
+    
         console.log(this.dataUser.value);
 
       }
