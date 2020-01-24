@@ -29,7 +29,7 @@ namespace allApi.Controllers
      {
 
         new Course { IdCourse = "111001", NameCourse = "coursese1" , Students = DataStudent.ToArray()},
-        new Course { IdCourse = "111002", NameCourse = "coursese2" , Students = DataStudent.ToArray()}
+        // new Course { IdCourse = "111002", NameCourse = "coursese2" , Students = DataStudent.ToArray()}
 
 
     };
@@ -38,12 +38,19 @@ namespace allApi.Controllers
      {
 
         new UserTeacher {  UsernameTeacher = "teacher1", PasswordTeacher = "1111", IdTeacher = "1111", NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
-        // new UserTeacher {  UsernameTeacher = "teacher2", PasswordTeacher = "2222", IdTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
+        new UserTeacher {  UsernameTeacher = "teacher2", PasswordTeacher = "2222", IdTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() }
         // new UserTeacher {  UsernameTeacher = "teacher3", PasswordTeacher = "3333", IdTeacher = "3333", NameTeacher ="Nameteacher3", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() },
         // new UserTeacher {  UsernameTeacher = "teacher4", PasswordTeacher = "4444", IdTeacher = "4444", NameTeacher ="Nameteacher4", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th",Course = CourseData.ToArray() }
 
 
     };
+    
+      [HttpGet]
+        public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
+        {
+            return CourseData.ToList();
+
+        }
 
         [HttpGet]
         public ActionResult<IEnumerable<UserTeacher>> GetAllDataTeacher()
@@ -56,6 +63,23 @@ namespace allApi.Controllers
         public ActionResult<UserTeacher> GetById_Teacher(string id)
         {
             return DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
+        }
+
+           [HttpPost]
+        public Course Add_Course([FromBody] Course CourseAll)
+        {
+
+            // var _id = Guid.NewGuid().ToString();
+            var item5 = new Course
+            {
+                
+                IdCourse = CourseAll.IdCourse,
+                NameCourse = CourseAll.NameCourse,
+                Students = DataStudent.ToArray()
+           
+            };
+            CourseData.Add(item5);
+            return item5;
         }
 
         [HttpPost]
@@ -71,9 +95,7 @@ namespace allApi.Controllers
                 IdTeacher = Teacher.IdTeacher,
                 NameTeacher = Teacher.NameTeacher,
                 StatusTeacher = Teacher.StatusTeacher,
-                EmailTeacher = Teacher.EmailTeacher,
-
-                Course = CourseData.ToArray()
+                EmailTeacher = Teacher.EmailTeacher
             };
             DataTeacher.Add(item);
             return item;
@@ -203,7 +225,7 @@ namespace allApi.Controllers
                 Course = CourseData.ToArray()
 
             };
-            // DataTeacher.Remove(data);
+            DataTeacher.Remove(data);
             DataTeacher.Add(item2);
             return item2;
         }

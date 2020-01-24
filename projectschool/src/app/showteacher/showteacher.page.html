@@ -18,7 +18,7 @@
 
     </ion-row>
 
-    <form [formGroup]="courseData" (ngSubmit)="AddCourseTeacher()">
+    <form [formGroup]="courseData" (ngSubmit)="AddCourseTeacher(showDatateacher.idTeacher)">
       <ion-row text-center *ngIf="showDatateacher != null">
         <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
         <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
@@ -56,7 +56,7 @@
       <ion-col><label>รายชื่อนักเรียน</label></ion-col>
 
     </ion-row>
-    <ion-row *ngFor='let s of  a' text-center>
+    <ion-row *ngFor='let s of showDatateacher' text-center>
       <ion-col><label>{{s.idCourse}}</label></ion-col>
       <ion-col><label>{{s.nameCourse}}</label></ion-col>
       <ion-col>

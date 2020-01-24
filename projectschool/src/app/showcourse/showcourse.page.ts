@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CallapiService } from '../callapi.service';
 import { Router } from '@angular/router';
 import { course } from 'src/models/course';
+import { userTeacher } from 'src/models/userTeacher';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { course } from 'src/models/course';
 })
 export class ShowcoursePage implements OnInit {
 
-  getdataAllcourse: course;
+  getdataAllcourse: userTeacher;
 
   constructor(public callapi: CallapiService, public router: Router) { }
 

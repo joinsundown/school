@@ -18,6 +18,7 @@ export class ShowstudentPage implements OnInit {
   getdatateacher: FormGroup;
   courseData: FormGroup;
   getdataAllteacher: userTeacher;
+  getalldatacourse :userTeacher;
 
 
 
@@ -56,10 +57,18 @@ export class ShowstudentPage implements OnInit {
   getAllData() {
     this.callapi.getAllData_Teacher().subscribe(data => {
       this.getdataAllteacher = data;
-      console.log(this.getdataAllteacher);
+      // console.log(this.getdataAllteacher);
 
     });
   }
+
+  // getAllDatacourse() {
+  //   this.callapi.getAllData_Course().subscribe(data => {
+  //     this.getalldatacourse = data;
+  //     console.log(this.getalldatacourse);
+
+  //   });
+  // }
 
 
   getStudentById() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CallapiService} from '../callapi.service';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { course } from 'src/models/course';
+import { userTeacher } from 'src/models/userTeacher';
 
 @Component({
   selector: 'app-addcourse',
@@ -11,7 +12,7 @@ import { course } from 'src/models/course';
 export class AddcoursePage implements OnInit {
 
   courseData : FormGroup;
-  addcourseData : course;
+  addcourseData : userTeacher;
 
   constructor(public callapi:CallapiService,public formbuilder: FormBuilder) {
     this.courseData = this.formbuilder.group({
@@ -26,10 +27,12 @@ export class AddcoursePage implements OnInit {
   AddCourse(){
     this.addcourseData = (this.courseData.value);
     console.log(this.addcourseData); 
-    this.callapi.add_Course(this.addcourseData).subscribe(it =>{
+    this.callapi.teacheraddCourse(this.addcourseData).subscribe(it =>{
       console.log(it);
       
     });
   }
+
+  
 
 }

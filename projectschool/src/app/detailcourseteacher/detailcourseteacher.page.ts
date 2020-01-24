@@ -30,8 +30,10 @@ export class DetailcourseteacherPage implements OnInit {
 
   ngOnInit() {
     this.getStudentById();
-
   }
+
+
+
   getAlldatacourseTeacher() {
     this.callapi.getById_Teacher(this.idt).subscribe(it => {
       this.getAll = it;

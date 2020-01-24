@@ -27,18 +27,18 @@ namespace allApi.Controllers
         public static List<Course> DataCourse = new List<Course>
      {
 
-        new Course { IdCourse = "001", NameCourse = "Test" ,Students = DataStudent.ToArray()},
-        new Course { IdCourse = "002", NameCourse = "SSSS" ,Students = DataStudent.ToArray()}
+        new Course { IdCourse = "1001", NameCourse = "วิชาภาษาไทย" ,Students = DataStudent.ToArray()},
+        new Course { IdCourse = "2002", NameCourse = "วิชาภาษาอะไร" ,Students = DataStudent.ToArray()}
 
 
     };
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
-        {
-            return DataCourse.ToList();
+        // [HttpGet]
+        // public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
+        // {
+        //     return DataCourse.ToList();
 
-        }
+        // }
 
         [HttpGet("{id}")]
         public ActionResult<Course> GetById_Course(string id)

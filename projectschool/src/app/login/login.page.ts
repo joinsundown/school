@@ -75,6 +75,7 @@ export class LoginPage implements OnInit {
           console.log(this.DataT[og].statusTeacher);
           this.a = this.DataT[og].idTeacher;
           console.log(this.a);
+          this.callapi.idteaher = this.DataT[og].idTeacher
 
 
 

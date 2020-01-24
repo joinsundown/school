@@ -18,9 +18,9 @@ export class ShowteacherPage implements OnInit {
   idDatateacher: any;
   showDatateacher: userTeacher;
   getdatateacher: FormGroup;
-  showCourse: course;
+  showCourse: userTeacher;
   courseDataTeacher: FormGroup;
-  addcourseTeacher: course;
+  addcourseTeacher: userTeacher;
   courseData: FormGroup;
   course: any;
   // addcourse: opencourse;
@@ -73,20 +73,14 @@ export class ShowteacherPage implements OnInit {
 
     // this.allshowcourse();
   }
-
-
+  
 
   getTeacherById() {
     this.callapi.getById_Teacher(this.idDatateacher).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
-      for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
-        this.showcourseteacher[index] = this.showDatateacher.course[index];
-        console.log(this.showcourseteacher[index]);
-        this.a = this.showcourseteacher;
-        console.log(this.a);
+  
 
-      }
 
 
     });
@@ -107,7 +101,7 @@ export class ShowteacherPage implements OnInit {
 
 
   }
-  AddCourseTeacher() {
+  AddCourseTeacher(id) {
 
     console.log(this.showCourse);
     console.log(this.courseData.value.id_Course);
@@ -118,7 +112,7 @@ export class ShowteacherPage implements OnInit {
     this.datax.nameCourse = filter.nameCourse;
     // console.log(this.datax);
 
-    this.callapi.AddCourseToTeacher(this.idDatateacher, this.datax).subscribe(it => {
+    this.callapi.AddCourseToTeacher(id, this.datax).subscribe(it => {
       console.log(it);
     });
 
@@ -130,11 +124,11 @@ export class ShowteacherPage implements OnInit {
 
   }
 
-  addopenCourse(data) {
-    this.callapi.add_OpenCourse(data).subscribe(data => {
-      console.log(data);
-    });
-  }
+  // addopenCourse(data) {
+  //   this.callapi.add_OpenCourse(data).subscribe(data => {
+  //     console.log(data);
+  //   });
+  // }
 
 
   getByIdStudent(id) {
