@@ -17,6 +17,7 @@ export class ShowteacherPage implements OnInit {
 
   idDatateacher: any;
   showDatateacher: userTeacher;
+  showDatacourse: userTeacher;
   getdatateacher: FormGroup;
   showCourse: userTeacher;
   courseDataTeacher: FormGroup;
@@ -69,25 +70,38 @@ export class ShowteacherPage implements OnInit {
   ngOnInit() {
     this.getTeacherById();
     console.log(this.getdatateacher);
-    this.getCourse();
+    this.getalldataCourse();
+
 
     // this.allshowcourse();
   }
-  
+
 
   getTeacherById() {
     this.callapi.getById_Teacher(this.idDatateacher).subscribe(it => {
       console.log(it);
       this.showDatateacher = it;
-  
-
-
-
+      console.log(this.showDatateacher);
+      // for (let index = 0; index < Object.keys(this.showDatateacher.course).length; index++) {
+      //   this.showcourseteacher[index] = this.showDatateacher.course[index];
+      //   console.log(this.showcourseteacher[index]);
+      //   this.a = this.showcourseteacher;
+      //   console.log(this.a);   
+      // }
     });
-
   }
-  getCourse() {
-    this.callapi.getAllData_Course().subscribe(it => {
+
+  // getAlldatacourse() {
+  //   this.callapi.getAllData_Course().subscribe(it => {
+  //     console.log(it);
+  //     this.showDatacourse = it;
+
+
+  //   });
+  // }
+
+  getalldataCourse() {
+    this.callapi.getAllData_Teacher().subscribe(it => {
       console.log(it);
       this.showCourse = it;
       console.log(this.showCourse);

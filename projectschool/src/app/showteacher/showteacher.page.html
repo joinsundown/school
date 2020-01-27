@@ -56,9 +56,9 @@
       <ion-col><label>รายชื่อนักเรียน</label></ion-col>
 
     </ion-row>
-    <ion-row *ngFor='let s of showDatateacher' text-center>
-      <ion-col><label>{{s.idCourse}}</label></ion-col>
-      <ion-col><label>{{s.nameCourse}}</label></ion-col>
+    <ion-row text-center *ngFor="let data of dataCourse;let i = index">
+      <ion-col><label>{{ data.course.idCourse }}</label></ion-col>
+      <ion-col><label>{{ data.nameCourse }}</label></ion-col>
       <ion-col>
         <ion-button routerLink="/listnamestudent">รายชื่อ</ion-button>
       </ion-col>

@@ -33,12 +33,12 @@ namespace allApi.Controllers
 
     };
 
-        // [HttpGet]
-        // public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
-        // {
-        //     return DataCourse.ToList();
+        [HttpGet]
+        public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
+        {
+            return DataCourse.ToList();
 
-        // }
+        }
 
         [HttpGet("{id}")]
         public ActionResult<Course> GetById_Course(string id)
